@@ -1,29 +1,20 @@
-//- mixin
-mixin m-btnSet01(tag, text, link, blank)
-	#{tag}.m-btnSet01
-		if(blank=="_blank")
-			a(href=link target="_blank")
+mixin m-btnSet01(tg)
+	-
+		var op = {
+			tag:       tg.tag ? tg.tag : "div",
+			baseName:  tg.baseName ? tg.baseName : "m-btnSet01",
+			className: tg.className ? tg.className : "",
+			url:       tg.url ? tg.url : "",
+			blank:     tg.blank ? tg.blank : "",
+			text:      tg.text ? tg.text : "ボタン"
+		}
+	
+	#{op.tag}( class = op.baseName+op.className )
+		if(op.blank=="_blank")
+			a(href= op.url target="_blank")
 				span.btnWrapper
-					span.btnInner!= text
+					span.btnInner!= op.text
 		else
-			a(href=link)
+			a(href= op.url)
 				span.btnWrapper
-					span.btnInner!= text
-
-+l-columnBox
-	+l-contentsWidth
-		+l-mqWrapper
-			+m-markupTitle('モジュール - ボタンモジュール01')
-			
-			+l-markupBlock
-				+m-btnSet01('p','ボタンモジュール01','.pdf')
-
-			+l-markupBlock
-				+p-markupBtn('pug').
-					p.m-btnSet01
-						a(href="") 拡張子でアイコン切り分け
-							span.btnWrapper
-								span.btnInner テキスト
-
-				+p-markupBtn('stylus')
-					include ../../../../stylus/_include/_modules/_m_btnModules/_m_btnSet01.styl
+					span.btnInner!= op.text

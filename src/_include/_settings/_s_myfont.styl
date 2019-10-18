@@ -1,0 +1,54 @@
+@font-face {
+font-family: "myfont";
+src: url('../fonts/myfont.eot?c=1419063630662');
+src: url('../fonts/myfont.eot?#iefix?c=1419063630662') format('eot'),
+	url('../fonts/myfont.woff?c=1419063630662') format('woff'),
+	url('../fonts/myfont.ttf?c=1419063630662') format('truetype'),
+	url('../fonts/myfont.svg#myfont') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+.is-iconFont:before {
+display: inline-block;
+font-family: "myfont";
+font-style: normal;
+font-weight: normal;
+line-height: 1;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+fontIconSet(icon)
+	content: icon;
+	font-family: "myfont";
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+
+.is-iconFont-lg {
+font-size: 1.3333333333333333em;
+line-height: 0.75em;
+vertical-align: -15%;
+}
+.is-iconFont-2x { font-size: 2em; }
+.is-iconFont-3x { font-size: 3em; }
+.is-iconFont-4x { font-size: 4em; }
+.is-iconFont-5x { font-size: 5em; }
+.is-iconFont-fw {
+width: 1.2857142857142858em;
+text-align: center;
+}
+
+.is-iconFont-arrow01:before { content: "\EA01" }
+.is-iconFont-doc01:before { content: "\EA02" }
+.is-iconFont-etc01:before { content: "\EA03" }
+.is-iconFont-excel01:before { content: "\EA04" }
+.is-iconFont-movie01:before { content: "\EA05" }
+.is-iconFont-music01:before { content: "\EA06" }
+.is-iconFont-outer01:before { content: "\EA07" }
+.is-iconFont-pdf01:before { content: "\EA08" }
+.is-iconFont-ppt01:before { content: "\EA09" }
