@@ -1,0 +1,19 @@
+extends /_include/_template/_t_base_template
+
+block vars
+	- var KEY = "component"
+	- var URL = 'component.html'
+	- var RELATIVE_PATH = ''
+	- var TITLE = 'タイトル'
+	- var DESCRIPTION = ''
+	- var KEYWORDS = ''
+	- var header = "false"
+	- var footer = "false"
+	- var side = ["false","left"]
+	- var jquery = "true"
+
+block contents
+	+l-contentsWidth({tag:"div"})
+		+l-mqWrapper({tag:"div"})
+			+m-imageSet01({imageTag:"figure", imageUrl: 'https://placeimg.com/400/400/animals'})
+				figcaption テキストが入ります

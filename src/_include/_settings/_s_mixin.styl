@@ -1,0 +1,151 @@
+// /* mixin & Variable */
+
+MQ_SP(maxWidth){
+	@media screen and (max-width: maxWidth) {
+		{block}
+	}
+	
+}
+
+MQ_PC(minWidth){
+	@media screen and (min-width: minWidth) {
+		{block}
+	}
+	
+}
+
+wSet(width, parent)
+	return width / parent * 100%;
+
+CF()
+	+cache('clearfix')
+		&::after
+			content: "";
+			display: block;
+			clear: both;
+
+flexBox()
+	display: flex;
+	flex-wrap: wrap;
+
+// roboto()
+// 	font-family: 'Roboto', sans-serif;
+
+fontSet()
+	font-family: DF_FONT;
+	fontSize(14);
+	line-height: 1.6;
+	-webkit-text-size-adjust: 100%;
+	
+	+MQ_SP(SP_RES_WID)
+		fontSize(13);
+		
+fontSize(size) {
+	font-size: (size) px;
+	font-size: (size / 10) rem;
+}
+
+lastReset()
+	*
+		&:last-child
+			margin-bottom: 0;
+
+vwsp(size)
+	rate = 100 / 650;
+	return rate * size * 1vw
+
+vwpc(size)
+	rate = 100 / 1600;
+	return rate * size * 1vw
+
+fontSp(font_size)
+	font-size: font_size * 1px;
+	font-size: vwsp(font_size);
+
+fontPc(font_size)
+	font-size: font_size * 1px;
+	font-size: vwpc(font_size);
+
+marginBottom(MARGIN)
+	margin-bottom MARGIN * 1px
+	lastReset()
+
+	+MQ_SP(SP_RES_WID)
+		margin-bottom (MARGIN / 2) * 1px
+
+titleSizeSet(tag)
+	lastReset()
+	p, div, ul, ol
+		&+h1{tag}
+			margin-top 60px
+			+MQ_SP(SP_RES_WID)
+				margin-top 40px
+		&+h2{tag}
+			margin-top 40px
+			+MQ_SP(SP_RES_WID)
+				margin-top 30px
+		&+h3{tag}
+			margin-top 30px
+			+MQ_SP(SP_RES_WID)
+				margin-top 20px
+		&+h4{tag}
+			margin-top 20px
+			+MQ_SP(SP_RES_WID)
+				margin-top 10px
+		&+h5{tag}
+			margin-top 15px
+			+MQ_SP(SP_RES_WID)
+				margin-top 5px
+		h6{tag}
+			margin-top 15px
+			+MQ_SP(SP_RES_WID)
+				margin-top 5px
+	h1{tag}
+		margin-bottom 50px
+		+MQ_SP(SP_RES_WID)
+			margin-bottom 40px
+		span
+			fontSize(36)
+			+MQ_SP(SP_RES_WID)
+				fontSize(24)
+	h2{tag}
+		margin-bottom 35px
+		+MQ_SP(SP_RES_WID)
+			margin-bottom 30px
+		span
+			fontSize(28)
+			+MQ_SP(SP_RES_WID)
+				fontSize(20)
+	h3{tag}
+		margin-bottom 25px
+		+MQ_SP(SP_RES_WID)
+			margin-bottom 20px
+		span
+			fontSize(20)
+			+MQ_SP(SP_RES_WID)
+				fontSize(18)
+	h4{tag}
+		margin-bottom 15px
+		+MQ_SP(SP_RES_WID)
+			margin-bottom 10px
+		span
+			fontSize(17)
+			+MQ_SP(SP_RES_WID)
+				fontSize(15)
+	h5{tag}
+		margin-bottom 10px
+		+MQ_SP(SP_RES_WID)
+			margin-bottom 5px
+		span
+			fontSize(15)
+			+MQ_SP(SP_RES_WID)
+				fontSize(14)
+	
+	h6{tag}
+		margin-bottom 5px
+		+MQ_SP(SP_RES_WID)
+			margin-bottom 3px
+		span
+			fontSize(14)
+			+MQ_SP(SP_RES_WID)
+				fontSize(13)

@@ -1,0 +1,46 @@
+extends /_include/_template/_t_base_template
+
+block vars
+	- var KEY = "component"
+	- var URL = 'component.html'
+	- var RELATIVE_PATH = ''
+	- var TITLE = 'タイトル'
+	- var DESCRIPTION = ''
+	- var KEYWORDS = ''
+	- var header = "false"
+	- var footer = "false"
+	- var side = ["false","left"]
+	- var jquery = "true"
+
+block contents
+	+l-contentsWidth({tag:"div"})
+		+l-mqWrapper({tag:"div"})
+			+m-defaultTagSet({tag:"div"})
+				p!= DUMMY_TEXT_400
+
+				ul
+					li!= DUMMY_TEXT_50
+						ul
+							li!= DUMMY_TEXT_20
+								ul
+									li!= DUMMY_TEXT_20
+				
+				ol
+					li!= DUMMY_TEXT_50
+						ol
+							li!= DUMMY_TEXT_50
+								ol
+									li!= DUMMY_TEXT_50
+			+m-discListSet01
+				li ディスクリスト
+					ul
+						li ディスクリスト
+							ul
+								li ディスクリスト
+
+			+m-decimalListSet01
+				li 数字リスト
+					ul
+						li 数字リスト
+							ul
+								li 数字リスト

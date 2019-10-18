@@ -1,0 +1,26 @@
+extends /_include/_template/_t_base_template
+
+block vars
+	- var KEY = "home"
+	- var URL = 'index.html'
+	- var RELATIVE_PATH = ''
+	- var TITLE = 'ページリスト'
+	- var DESCRIPTION = ''
+	- var KEYWORDS = ''
+	- var header = "false"
+	- var footer = "false"
+	- var side = ["false","left"]
+	- var jquery = "true"
+
+block contents
+	+l-contentsWidth({tag:"div"})
+		+l-mqWrapper({tag:"div"})
+			+m-discListSet01
+				li
+					a(href="m_title.html") タイトル
+				li
+					a(href="m_text.html") テキスト
+				li
+					a(href="m_image.html") 画像
+				li
+					a(href="m_form.html") フォーム

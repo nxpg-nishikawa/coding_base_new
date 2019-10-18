@@ -1,0 +1,11 @@
+mixin m-title-borderLeft01(tg)
+	-
+		var op = {
+			tag:       tg.tag ? tg.tag : "div",
+			baseName:  tg.baseName ? tg.baseName : "m-title-borderLeft01",
+			className: tg.className ? tg.className : "",
+			text:      tg.text ? tg.text : "ダミータイトルです"
+		}
+
+	#{op.tag}( class = op.baseName+op.className )
+		span!= op.text

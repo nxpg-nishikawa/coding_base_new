@@ -1,0 +1,44 @@
+//- コンポーネント - 画像+テキストコンポーネント04
+.c-imageText04
+	IMAGE_WIDTH = 600px
+	CF()
+	position relative
+
+	&.is-imageRight
+		.imageBlock
+			float right
+		.textBlock
+			left 0
+
+	&.is-imageLeft
+		.imageBlock
+			float left
+		.textBlock
+			right 0
+			
+	.imageBlock
+		+MQ_PC(SP_RES_WID)
+			width IMAGE_WIDTH
+		+MQ_SP(SP_RES_WID)
+			width 100%
+			margin-bottom 10px
+			padding 0
+	
+	.textBlock
+		position absolute
+		width "calc(100% - %s + 100px)" % IMAGE_WIDTH
+		top 50%
+		transform translate3d(0,-50%,0)
+		+MQ_SP(SP_RES_WID)
+			width 80%
+	
+	.m-imageSet01
+		+MQ_SP(SP_RES_WID)
+			width 80%
+		
+		img
+			max-width inherit
+			+MQ_PC(SP_RES_WID)
+				width inherit
+			+MQ_SP(SP_RES_WID)
+				max-width 100%

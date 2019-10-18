@@ -1,0 +1,29 @@
+//- mixin
+mixin m-btnSet02(tag, text, link, blank)
+	#{tag}.m-btnSet02
+		if(blank=="_blank")
+			a(href=link target="_blank")
+				span.btnWrapper
+					span.btnInner!= text
+		else
+			a(href=link)
+				span.btnWrapper
+					span.btnInner!= text
+
++l-columnBox
+	+l-contentsWidth
+		+l-mqWrapper
+			+m-markupTitle('モジュール - ボタンモジュール02')
+			
+			+l-markupBlock
+				+m-btnSet02('p','ボタンモジュール02','.pdf')
+
+			+l-markupBlock
+				+p-markupBtn('pug').
+					p.m-btnSet02
+						a(href="") 拡張子でアイコン切り分け
+							span.btnWrapper
+								span.btnInner テキスト
+
+				+p-markupBtn('stylus')
+					include ../../../../stylus/_include/_modules/_m_btnModules/_m_btnSet02.styl

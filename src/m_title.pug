@@ -1,0 +1,25 @@
+extends /_include/_template/_t_base_template
+
+block vars
+	- var KEY = "component"
+	- var URL = 'component.html'
+	- var RELATIVE_PATH = ''
+	- var TITLE = 'タイトル'
+	- var DESCRIPTION = ''
+	- var KEYWORDS = ''
+	- var header = "false"
+	- var footer = "false"
+	- var side = ["false","left"]
+	- var jquery = "true"
+
+block contents
+	+l-contentsWidth({tag:"div"})
+		+l-mqWrapper({tag:"div"})
+			+m-title-bg01({tag:"h3"})
+			+m-title-boldLarge01({tag:"h3"})
+			+m-title-borderBottom01({tag:"h3"})
+			+m-title-borderLeft01({tag:"h3"})
+			+m-title-borderRight01({tag:"h3"})
+			+m-title-borderTop01({tag:"h3"})
+			+m-title-borderTopBottom01({tag:"h3"})
+			+m-title-twoWord01({tag:"h3"})
