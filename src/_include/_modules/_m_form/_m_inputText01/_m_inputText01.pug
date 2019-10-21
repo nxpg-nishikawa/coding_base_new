@@ -9,7 +9,7 @@ mixin m-inputText01(tg)
 			className:   tg.className ? tg.className : ""
 		}
 
-	#{op.tag}( class = op.baseName+op.className )
+	#{op.tag}( class = op.baseName + " " + op.className )
 		input(type="text" name= op.name id= op.id placeholder= op.placeholder)
 
 

@@ -8,7 +8,7 @@ mixin m-inputRadio01(tg)
 			className: tg.className ? tg.className : ""
 		}
 
-	#{op.tag}( class = op.baseName+op.className )
+	#{op.tag}( class = op.baseName + " " + op.className )
 		each val, index in op.text
 			span.radio
 				if index == 0

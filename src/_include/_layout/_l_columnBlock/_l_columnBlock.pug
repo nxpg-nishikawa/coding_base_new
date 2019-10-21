@@ -5,5 +5,5 @@ mixin l-columnBlock(tg)
 			baseName:  tg.baseName ? tg.baseName : "l-columnBlock",
 			className: tg.className ? tg.className : ""
 		}
-	#{op.tag}( class = op.baseName+op.className )
+	#{op.tag}( class = op.baseName + " " + op.className )
 		block

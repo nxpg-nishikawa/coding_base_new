@@ -6,5 +6,5 @@ mixin l-contentsWidth(tg)
 			className: tg.className ? tg.className : ""
 		}
 		
-	#{op.tag}( class = op.baseName+op.className )
+	#{op.tag}( class = op.baseName + " " + op.className )
 		block

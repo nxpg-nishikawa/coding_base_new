@@ -11,7 +11,7 @@ mixin m-inputCheck01(tg)
 			
 		}
 
-	#{op.tag}( class = op.baseName+op.className )
+	#{op.tag}( class = op.baseName + " " + op.className )
 		each val, index in op.text
 			- var idName = op.name + "0" + index
 			label(for= (op.id ? op.id : idName))

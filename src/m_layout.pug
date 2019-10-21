@@ -1,0 +1,58 @@
+extends /_include/_template/_t_base_template
+
+block vars
+	- var KEY = "component"
+	- var URL = 'component.html'
+	- var RELATIVE_PATH = ''
+	- var TITLE = 'タイトル'
+	- var DESCRIPTION = ''
+	- var KEYWORDS = ''
+	- var header = "false"
+	- var footer = "false"
+	- var side = ["false","left"]
+	- var jquery = "true"
+
+block contents
+	+l-contentsWidth({tag:"div"})
+		+l-mqWrapper({tag:"div"})
+			+l-colSet01({tag:"ul", className:"is-two"})
+				li aaa
+				li aaa
+				li aaa
+			
+			+l-colSet01({tag:"ul", className:"is-three"})
+				li aaa
+				li aaa
+				li aaa
+				li aaa
+			
+
+			+l-colSet01({tag:"ul", className:"is-four"})
+				li aaa
+				li aaa
+				li aaa
+				li aaa
+				li aaa
+			
+
+			+l-colSet01({tag:"ul", className:"is-five"})
+				li aaa
+				li aaa
+				li aaa
+				li aaa
+				li aaa
+				li aaa
+			
+
+			+l-colSet01({tag:"ul", className:"is-six"})
+				li aaa
+				li aaa
+				li aaa
+				li aaa
+				li aaa
+				li aaa
+				li aaa
+			
+
+			p.is-pcOnly pcのみ表示
+			p.is-spOnly spのみ表示

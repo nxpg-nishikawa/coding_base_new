@@ -1,0 +1,11 @@
+mixin l-colSet01(tg)
+	-
+		var op = {
+			tag:       tg.tag ? tg.tag : "ul",
+			baseName:  tg.baseName ? tg.baseName : "l-colSet01",
+			className: tg.className ? tg.className : "",
+			list:      tg.list ? tg.list : [{text:"1"}, {text:"2", url:"#"}, {text:"3", url:"#"}],
+		}
+
+	#{op.tag}( class = op.baseName + " " + op.className )
+		block

@@ -15,7 +15,7 @@ block vars
 block contents
 	+l-contentsWidth({tag:"div"})
 		+l-mqWrapper({tag:"div"})
-			+m-defaultTagSet({tag:"div"})
+			+m-defaultTag({tag:"div"})
 				p!= DUMMY_TEXT_400
 
 				ul
@@ -31,14 +31,14 @@ block contents
 							li!= DUMMY_TEXT_50
 								ol
 									li!= DUMMY_TEXT_50
-			+m-discListSet01
+			+m-discList01
 				li ディスクリスト
 					ul
 						li ディスクリスト
 							ul
 								li ディスクリスト
 
-			+m-decimalListSet01
+			+m-decimalList01
 				li 数字リスト
 					ul
 						li 数字リスト
@@ -49,3 +49,22 @@ block contents
 			p
 				+m-linkModule01({url:"index.html"})
 					| テキストリンク
+
+			
+			+m-table01({tag:"div"})
+				thead
+					tr
+						th テキスト
+						th テキスト
+						th テキスト
+				tbody
+					tr
+						th テキスト
+						td!= DUMMY_TEXT_400
+						td
+							ol
+								li!= DUMMY_TEXT_50
+								li!= DUMMY_TEXT_50
+			
+
+			+m-breadcrumb01([{text:"ホーム", url:"#"}, {text:"下層ページ", url:"#"}, {text:"下層ページ"}])

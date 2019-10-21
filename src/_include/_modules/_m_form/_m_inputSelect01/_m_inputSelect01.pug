@@ -9,7 +9,7 @@ mixin m-inputSelect01(tg)
 			className: tg.className ? tg.className : ""
 		}
 
-	#{op.tag}( class = op.baseName+op.className )
+	#{op.tag}( class = op.baseName + " " + op.className )
 		span.selectWrapper
 			select(id= op.id name= op.name)
 				block

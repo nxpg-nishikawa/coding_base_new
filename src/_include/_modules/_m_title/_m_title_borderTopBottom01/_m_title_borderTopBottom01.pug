@@ -7,5 +7,5 @@ mixin m-title-borderTopBottom01(tg)
 			text:      tg.text ? tg.text : "ダミータイトルです"
 		}
 
-	#{op.tag}( class = op.baseName+op.className )
+	#{op.tag}( class = op.baseName + " " + op.className )
 		span!= op.text
