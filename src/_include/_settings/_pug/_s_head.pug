@@ -1,0 +1,34 @@
+- var DOMAIN = ''
+- var HOME_TITLE = "コーディングベース"
+- var CSS_PATH = 'css'
+- var JS_PATH = 'js'
+
+
+link(rel= "canonical", href=DOMAIN + URL)
+meta(charset= "utf-8")
+meta(http-equiv= "X-UA-Compatible", content="IE=edge")
+//- meta(name= "viewport", content="width=device-width, user-scalable=yes, initial-scale=1, minimum-scale=0.5 , maximum-scale=2")
+meta(name= "viewport", content="width=device-width, minimum-scale=0.5 , maximum-scale=2")
+meta(name= "format-detection", content="telephone=no")
+
+title #{TITLE + (KEY == "home" ? "" : " | ") + HOME_TITLE}
+
+meta(content= DESCRIPTION, name="description")
+meta(content= KEYWORDS, name="keywords")
+meta(content= TITLE + (KEY == "home" ? "" : " | ") + HOME_TITLE, property="og:title")
+meta(content= DESCRIPTION, property="og:description")
+meta(content= DOMAIN + "images/common/ogp.png", property="og:image")
+meta(content= DOMAIN + URL, property="og:url")
+meta(content= (KEY == "home" ? "website" : "article"), property="og:type")
+meta(content= "ja_JP", property="og:locale")
+
+//- link(rel="manifest" href=RELATIVE_PATH+"manifest.json")
+link(rel= "stylesheet", href= RELATIVE_PATH+CSS_PATH+"/style.css")
+link(rel="shortcut icon" href= RELATIVE_PATH+"images/common/favicon.ico")
+link(rel="apple-touch-icon" href= RELATIVE_PATH+"images/common/webclip.png")
+
+if (jquery == "true")
+    script(src= "https://code.jquery.com/jquery-1.12.4.min.js")
+script(src= RELATIVE_PATH+JS_PATH+"/vendor.js")
+script(src= RELATIVE_PATH+JS_PATH+"/function.js")
+

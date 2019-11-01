@@ -1,0 +1,63 @@
+//- コンポーネント - 画像+テキストコンポーネント04
+.c-imageText04
+	IMAGE_WIDTH = 700px
+
+	&.is-imageRight
+		.block
+			&.is-image
+				float right
+			&.is-text
+				left 0
+
+	&.is-imageLeft
+		.block
+			&.is-image
+				float left
+			&.is-text
+				right 0
+	
+	.group
+		&.is-before
+			margin-bottom 30px
+		&.is-primary
+			position relative
+			overflow hidden
+			.block
+				&.is-text
+					position absolute
+					width "calc(100% - %s + 100px)" % IMAGE_WIDTH
+					top 50%
+					transform translate3d(0,-50%,0)
+					+MQ_SP(SP_RES_WID)
+						width 80%
+			.block
+
+				&.is-image
+					+MQ_PC(SP_RES_WID)
+						width IMAGE_WIDTH
+					+MQ_SP(SP_RES_WID)
+						width 80%
+						margin-bottom 10px
+						padding 0
+					
+					.m-imageSet01
+
+						img
+							max-width inherit
+							+MQ_PC(SP_RES_WID)
+								width inherit
+							+MQ_SP(SP_RES_WID)
+								max-width 100%
+		&.is-after
+			margin-top 30px
+
+	.block
+		// wysiwyg用
+		m-defaultTag()
+
+	.area
+		margin-bottom 10px
+		&:last-child
+			margin-bottom 0
+		&.is-sub
+			fontSize(12)

@@ -1,12 +1,12 @@
 doctype html
-include /_include/_settings/_s_variables
-include /_include/_settings/_s_mixin
+include /_include/_settings/_pug/_s_variables
+include /_include/_settings/_pug/_s_mixin
 
 block vars
 
 html(lang="ja" class= "is-" + KEY)
 	head
-		include ../_settings/_s_head
+		include ../_settings/_pug/_s_head
 		block library
 	body
 

@@ -1,0 +1,235 @@
+extends /_include/_template/_t_base_template
+
+block vars
+	- var KEY = "component"
+	- var URL = 'component.html'
+	- var RELATIVE_PATH = ''
+	- var TITLE = 'タイトル'
+	- var DESCRIPTION = ''
+	- var KEYWORDS = ''
+	- var header = "false"
+	- var footer = "false"
+	- var side = ["false","left"]
+	- var jquery = "true"
+
+block contents
+	+l-contentsWidth({tag:"div"})
+		+l-mqWrapper({tag:"div"})
+
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+c-imageText01({tag:"div", before:true, after:true})
+						mixin beforeGroup()
+							.block.is-text
+								.area.is-title
+									+m-title-borderBottom01({tag:"h3",text:"画像+テキスト01"})
+								.area.is-text
+									p テキスト
+
+						mixin primaryGroup()
+							.block.is-image
+								.area.is-image
+									+m-imageSet01({imageTag:"figure", imageUrl: 'https://placeimg.com//400/250/animals'})
+										figcaption テキストが入ります
+							.block.is-text
+								.area.is-title
+									+m-title-borderLeft01({tag:"h3"})
+								.area.is-text
+									p!= DUMMY_TEXT_400
+								.area.is-sub
+									p 2019.09.07
+
+						mixin afterGroup()
+							.block.is-text
+								.area.is-sub
+									p テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+
+
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方(mixin)
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li c-imageText01
+										li m-imageSet01
+										li m-defaultTag
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+											.
+												+c-imageText01({tag:"div"})
+													mixin primaryGroup()
+														.block.is-image
+															.area.is-image
+																+m-imageSet01({imageTag:"p", imageUrl: '画像URL'})
+														.block.is-text
+															.area.is-title
+																タイトルが入ります
+															.area.is-text
+																テキストが入ります
+															.area.is-sub
+																サブコンテンツが入ります
+								.area.is-code
+									pre
+										code.stylus
+											.
+												+c-imageText01({
+													tag:       "div",           //親タグ名
+													baseName:  "c-imageText01", //ベースclass名
+													className: "is-imageLeft",  //追加class名
+													before:    false,           //before コンテンツ
+													after:     false            //after コンテンツ
+												})
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+											.
+												.c-imageText01.is-imageLeft
+													.group.is-before
+														//ここにbeforeコンテンツが入る
+													.group.is-primary
+														.block.is-image
+															.area.is-image
+																//画像
+														.block.is-text
+															.area.is-title
+																//タイトル
+															.area.is-text
+																//テキスト
+															.area.is-sub
+																//サブコンテンツ
+													.group.is-after
+														//ここにafterコンテンツが入る
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+												<div class="c-imageText01 is-imageLeft">
+													<div class="group is-before">
+														//ここにbeforeコンテンツが入る
+													</div>
+													<div class="group is-primary">
+														<div class="block is-image">
+															<div class="area is-image">
+																//画像
+															</div>
+														</div>
+														<div class="block is-text">
+															<div class="area is-title">
+																//タイトル
+															</div>
+															<div class="area is-text">
+																//テキスト
+															</div>
+															<div class="area is-sub">
+																//サブコンテンツ
+															</div>
+														</div>
+													</div>
+													<div class="group is-after">
+														//ここにafterコンテンツが入る
+													</div>
+												</div>
+
+
+			+l-columnBlock({tag:"div"})
+				+c-imageText02({tag:"div", before:true, after:true})
+					mixin beforeGroup()
+						.block.is-text
+							.area.is-title
+									+m-title-borderBottom01({tag:"h3",text:"画像+テキスト02"})
+							.area.is-text
+								p テキスト
+					mixin primaryGroup()
+						.block.is-image
+							.area.is-image
+								+m-imageSet01({imageTag:"figure", imageUrl: 'https://placeimg.com//400/250/animals'})
+									figcaption テキストが入ります
+						.block.is-text
+							.area.is-title
+								+m-title-borderLeft01({tag:"h3"})
+							.area.is-text
+								p!= DUMMY_TEXT_200
+								p!= DUMMY_TEXT_400
+							.area.is-sub
+								p 2019.09.07
+					mixin afterGroup()
+						.block.is-text
+							.area.is-sub
+								p テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+
+
+			+l-columnBlock({tag:"div"})
+				
+				+c-imageText03({tag:"div", before:true})
+					mixin beforeGroup()
+						.block.is-text
+							.area.is-title
+								+m-title-borderBottom01({tag:"h3",text:"画像+テキスト03"})
+							.area.is-text
+								p テキスト
+					mixin primaryGroup()
+						.block.is-image
+							.area.is-image(style='background-image: url(https://placeimg.com//400/250/animals)')
+						.block.is-text
+							.area.is-title
+								+m-title-borderLeft01({tag:"h3"})
+							.area.is-text
+								p!= DUMMY_TEXT_100
+							.area.is-sub
+								p 2019.09.07
+
+
+			+l-columnBlock({tag:"div"})
+			
+				+c-imageText04({tag:"div", before:true, className:"is-imageRight"})
+					mixin beforeGroup()
+						.block.is-text
+							.area.is-title
+								+m-title-borderBottom01({tag:"h3",text:"画像+テキスト04"})
+							.area.is-text
+								p テキスト
+					mixin primaryGroup()
+						.block.is-image
+							.area.is-image
+								+m-imageSet01({imageTag:"p", imageUrl: 'https://placeimg.com//700/400/animals'})
+						.block.is-text
+							.area.is-title
+								+m-title-borderLeft01({tag:"h3"})
+							.area.is-text
+								p!= DUMMY_TEXT_100
+							.area.is-sub
+								p 2019.09.07
+
+
+			+l-columnBlock({tag:"div"})
+
+				+c-imageBgSet01({tag:"div", before:true})
+					mixin beforeGroup()
+						.block.is-text
+							.area.is-title
+								+m-title-borderBottom01({tag:"h3",text:"背景画像+テキスト01"})
+							.area.is-text
+								p テキスト
+					mixin primaryGroup()
+						.block.is-image
+							.area.is-image
+								+m-imageSet01({imageTag:"p", imageUrl: 'https://placeimg.com//900/400/animals'})
+						.block.is-text
+							.area.is-text
+								p!= DUMMY_TEXT_100

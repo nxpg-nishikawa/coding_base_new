@@ -15,6 +15,16 @@ block vars
 block contents
 	+l-contentsWidth({tag:"div"})
 		+l-mqWrapper({tag:"div"})
-			+m-btn01({tag:"p",text:"ボタン01", url:"index.html"})
-			+m-btn02({tag:"p",text:"ボタン02", url:"#", className:"is-icon"})
-			+m-pager01([{list:"1"},{list:"2",url:"#"}])
+			+l-columnBlock({tag:"div"})
+				+m-title-borderBottom01({tag:"h3",text:"ボタン01"})
+				+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+
+
+			+l-columnBlock({tag:"div"})
+				+m-title-borderBottom01({tag:"h3",text:"ボタン02"})
+				+m-btn02({tag:"p",text:"ボタン02", url:"index.html", className:"is-icon"})
+
+
+			+l-columnBlock({tag:"div"})
+				+m-title-borderBottom01({tag:"h3",text:"ページャー01"})
+				+m-pager01([{list:"1"},{list:"2",url:"#"}])

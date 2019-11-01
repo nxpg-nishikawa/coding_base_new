@@ -1,0 +1,27 @@
+//- コンポーネント - 画像コンポーネント01
+.c-imageSet02
+	.block
+		// wysiwyg用
+		m-defaultTag()
+
+		&.is-image
+			+MQ_SP(SP_RES_WID)
+				.image
+					img
+						width 100%
+		&.is-text
+			position relative
+			width calc(100% - 20px)
+			margin -20px auto 0
+			padding 20px
+			background-color SITE_BG01
+			box-sizing border-box
+			z-index 1
+
+	.area
+		margin-bottom 10px
+		&:last-child
+			margin-bottom 0
+		&.is-sub
+			fontSize(12)
+	

@@ -12,7 +12,7 @@ const url = {
 	fonts : 'fonts/',
 	virtualDomain : 'http://test/'
 };
-const port = 8008;
+const port = 8088;
 const virtualDomainMode = false;
 const phpMode = false;
 

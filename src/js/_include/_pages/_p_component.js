@@ -33,6 +33,19 @@ function markupBlock() {
 	init();
 }
 
+function memoSet01() {
+	let $target = $(".c-memoSet01"),
+		tab = '.group.is-before .tab li',
+		content = '.group.is-primary';
+
+	$target.on('click',tab, function(){
+		$target.find(tab).removeClass('is-current');
+		$target.find(content).removeClass('is-current');
+		$(this).addClass('is-current');
+		$target.find(content).eq($(this).index()).addClass('is-current');
+	});
+}
+
 // init
 class initSet {
 	DOMReadBefore(op) {
@@ -46,6 +59,8 @@ class initSet {
 		accordionSet();
 		inView();
 		markupBlock();
+		memoSet01();
+		hljs.initHighlightingOnLoad();
 
 		let mainvisualSet01 = new slick();
 		mainvisualSet01.set('.js-mainvisualSet01');
@@ -64,6 +79,8 @@ class initSet {
 		slickSlider.set('.js-slickSlider');
 		slickSlider.option();
 		let swiper = new Swiper('.js-swiperSlider');
+
+		
 	}
 	imageReadAfter(op) {
 		// 画像読み込み後

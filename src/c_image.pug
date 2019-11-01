@@ -1,0 +1,78 @@
+extends /_include/_template/_t_base_template
+
+block vars
+	- var KEY = "component"
+	- var URL = 'component.html'
+	- var RELATIVE_PATH = ''
+	- var TITLE = 'タイトル'
+	- var DESCRIPTION = ''
+	- var KEYWORDS = ''
+	- var header = "false"
+	- var footer = "false"
+	- var side = ["false","left"]
+	- var jquery = "true"
+
+block contents
+	+l-contentsWidth({tag:"div"})
+		+l-mqWrapper({tag:"div"})
+			+l-columnBlock({tag:"div"})
+				+m-title-borderBottom01({tag:"h3",text:"画像セット01"})
+				+c-imageSet01({col:{tag:"div", className:"is-three"}})
+					mixin primaryGroup()
+						.col
+							.block.is-image
+								+m-imageSet01({imageTag:"p", imageUrl: 'https://placeimg.com/375/232/animals'})
+							.block.is-text
+								.area.is-title
+									+m-title-borderLeft01({tag:"h3"})
+								.area.is-text
+									p!= DUMMY_TEXT_50
+								.area.is-sub
+									p 2019.09.07
+						.col
+							.block.is-image
+								+m-imageSet01({imageTag:"p", imageUrl: 'https://placeimg.com/375/232/animals'})
+							.block.is-text
+								.area.is-title
+									+m-title-borderLeft01({tag:"h3"})
+								.area.is-text
+									p!= DUMMY_TEXT_50
+								.area.is-sub
+									p 2019.09.07
+			
+
+
+			+l-columnBlock({tag:"div"})
+				+m-title-borderBottom01({tag:"h3",text:"画像セット02"})
+				+c-imageSet02({col:{tag:"div", className:"is-three"}})
+					mixin primaryGroup()
+						.col
+							.block.is-image
+								+m-imageSet01({imageTag:"p", imageUrl: 'https://placeimg.com/375/232/animals'})
+							.block.is-text
+								.area.is-title
+									+m-title-borderLeft01({tag:"h3"})
+								.area.is-text
+									p!= DUMMY_TEXT_50
+								.area.is-sub
+									p 2019.09.07
+						.col
+							.block.is-image
+								+m-imageSet01({imageTag:"p", imageUrl: 'https://placeimg.com/375/232/animals'})
+							.block.is-text
+								.area.is-title
+									+m-title-borderLeft01({tag:"h3"})
+								.area.is-text
+									p!= DUMMY_TEXT_50
+								.area.is-sub
+									p 2019.09.07
+						.col
+							.block.is-image
+								+m-imageSet01({imageTag:"p", imageUrl: 'https://placeimg.com/375/232/animals'})
+							.block.is-text
+								.area.is-title
+									+m-title-borderLeft01({tag:"h3"})
+								.area.is-text
+									p!= DUMMY_TEXT_50
+								.area.is-sub
+									p 2019.09.07

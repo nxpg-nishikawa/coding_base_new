@@ -8102,6 +8102,19 @@ function markupBlock() {
 	init();
 }
 
+function memoSet01() {
+	var $target = $(".c-memoSet01"),
+	    tab = '.group.is-before .tab li',
+	    content = '.group.is-primary';
+
+	$target.on('click', tab, function () {
+		$target.find(tab).removeClass('is-current');
+		$target.find(content).removeClass('is-current');
+		$(this).addClass('is-current');
+		$target.find(content).eq($(this).index()).addClass('is-current');
+	});
+}
+
 // init
 
 var initSet = function () {
@@ -8124,6 +8137,8 @@ var initSet = function () {
 			accordionSet();
 			inView();
 			markupBlock();
+			memoSet01();
+			hljs.initHighlightingOnLoad();
 
 			var mainvisualSet01 = new slick();
 			mainvisualSet01.set('.js-mainvisualSet01');
