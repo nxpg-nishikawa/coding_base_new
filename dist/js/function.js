@@ -93,8 +93,9 @@
 
 __webpack_require__(1);
 var comSet = __webpack_require__(278);
-var homeSet = __webpack_require__(281);
-var componentSet = __webpack_require__(282);
+var aboutSet = __webpack_require__(281);
+var homeSet = __webpack_require__(282);
+var componentSet = __webpack_require__(283);
 var uaSet = __webpack_require__(280);
 
 var option = {
@@ -107,6 +108,7 @@ var init = function init() {
 	comSet(option);
 	homeSet(option);
 	componentSet(option);
+	aboutSet(option);
 };
 init();
 
@@ -8056,7 +8058,7 @@ var initSet = function () {
 
 module.exports = function (option) {
 	var init = new initSet();
-	initFunc(init, option, 'is-home');
+	initFunc(init, option, 'is-about');
 };
 
 /***/ }),
@@ -8069,13 +8071,55 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var initFunc = __webpack_require__(279);
 
+// init
+
+var initSet = function () {
+	function initSet() {
+		_classCallCheck(this, initSet);
+	}
+
+	_createClass(initSet, [{
+		key: 'DOMReadBefore',
+		value: function DOMReadBefore(op) {}
+	}, {
+		key: 'DOMReadAfter',
+		value: function DOMReadAfter(op) {}
+	}, {
+		key: 'imageReadAfter',
+		value: function imageReadAfter(op) {}
+	}, {
+		key: 'windowResize',
+		value: function windowResize(op) {}
+	}, {
+		key: 'windowScroll',
+		value: function windowScroll(op) {}
+	}]);
+
+	return initSet;
+}();
+
+module.exports = function (option) {
+	var init = new initSet();
+	initFunc(init, option, 'is-home');
+};
+
+/***/ }),
+/* 283 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var initFunc = __webpack_require__(279);
+
 // 追加module
-var matchHeight = __webpack_require__(283);
-var smoothScroll = __webpack_require__(284);
-var spTellLink = __webpack_require__(285);
-var accordionSet = __webpack_require__(286);
-var inView = __webpack_require__(287);
-var slick = __webpack_require__(288);
+var matchHeight = __webpack_require__(284);
+var smoothScroll = __webpack_require__(285);
+var spTellLink = __webpack_require__(286);
+var accordionSet = __webpack_require__(287);
+var inView = __webpack_require__(288);
+var slick = __webpack_require__(289);
 
 // マークアップアコーディオン用
 function markupBlock() {
@@ -8185,7 +8229,7 @@ module.exports = function (option) {
 };
 
 /***/ }),
-/* 283 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _this = this;
@@ -8317,7 +8361,7 @@ module.exports = function (op) {
 };
 
 /***/ }),
-/* 284 */
+/* 285 */
 /***/ (function(module, exports) {
 
 //スムーススクロール npm install SweetScroll
@@ -8366,7 +8410,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 285 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = function (op) {
@@ -8387,7 +8431,7 @@ module.exports = function (op) {
 };
 
 /***/ }),
-/* 286 */
+/* 287 */
 /***/ (function(module, exports) {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -8543,7 +8587,7 @@ module.exports = function (op) {
 };
 
 /***/ }),
-/* 287 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -8681,7 +8725,7 @@ module.exports = function (op) {
 };
 
 /***/ }),
-/* 288 */
+/* 289 */
 /***/ (function(module, exports) {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();

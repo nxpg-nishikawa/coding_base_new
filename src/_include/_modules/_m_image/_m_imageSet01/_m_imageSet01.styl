@@ -1,6 +1,13 @@
 .m-imageSet01
+	&.is-imageFull
+		.image
+			width 100%
+			img
+				width 100%
+				height auto
 	.image
 		display table
+		margin 0 auto
 		+MQ_SP(SP_RES_WID)
 			width 100%
 			text-align center
@@ -14,7 +21,3 @@
 	iframe
 		+MQ_SP(SP_RES_WID)
 			width 100%
-	img
-		max-width 100%
-		width 100%
-		height auto

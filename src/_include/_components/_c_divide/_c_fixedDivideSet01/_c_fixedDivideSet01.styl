@@ -1,0 +1,63 @@
+//- コンポーネント - 画像+テキストコンポーネント01
+.c-fixedDivideSet01
+	PADDING = 20px
+
+	&.is-contentsLeft
+		+MQ_PC(SP_RES_WID)
+			.group
+				&.is-primary
+					justify-content space-between
+			.block
+				&.is-fixed
+					order 1
+					padding-left PADDING
+
+	&.is-contentsRight
+		+MQ_PC(SP_RES_WID)
+			.block
+				&.is-fixed
+					padding-right PADDING
+
+	.group
+		&.is-before
+			margin-bottom 30px
+		&.is-primary
+			+MQ_PC(SP_RES_WID)
+				display flex
+		&.is-after
+			margin-top 30px
+
+	.block
+		&.is-fixed
+			+MQ_SP(SP_RES_WID)
+				width 100%
+				margin-bottom 10px
+				padding 0
+
+			
+		&.is-text
+			width 100%
+
+	.area
+		&.is-text
+			// wysiwyg用
+			m-defaultTag()
+		&.is-btn
+			min-width 300px
+			+MQ_SP(SP_RES_WID)
+				min-width 0
+			.com-btn
+				margin-bottom 10px
+				&:last-child
+					margin-bottom 0
+
+		margin-bottom 10px
+		&:last-child
+			margin-bottom 0
+		&.is-sub
+			fontSize(12)
+
+		.com-image
+			img
+				+MQ_SP(SP_RES_WID)
+					width 100%
