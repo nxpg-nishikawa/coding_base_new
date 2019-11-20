@@ -16,66 +16,74 @@ block contents
 	+l-contentsWidth({tag:"div"})
 		+l-mqWrapper({tag:"div"})
 			+l-columnBlock({tag:"div"})
-				+m-borderBottomTitle01({tag:"h3",text:"デフォルトテキストセット(WYSIWYG)"})
-				+m-defaultTag({tag:"div"})
-					p!= DUMMY_TEXT_400
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"デフォルトテキストセット(WYSIWYG)"})
+					+m-defaultTag({tag:"div"})
+						p!= DUMMY_TEXT_400
 
-					ul
-						li!= DUMMY_TEXT_50
-							ul
-								li!= DUMMY_TEXT_20
-									ul
-										li!= DUMMY_TEXT_20
-					
-					ol
-						li!= DUMMY_TEXT_50
-							ol
-								li!= DUMMY_TEXT_50
-									ol
-										li!= DUMMY_TEXT_50
-
-			+l-columnBlock({tag:"div"})
-				+m-borderBottomTitle01({tag:"h3",text:"ディスクリスト"})
-				+m-discList01
-					li ディスクリスト
 						ul
-							li ディスクリスト
+							li!= DUMMY_TEXT_50
 								ul
-									li ディスクリスト
-
-			+l-columnBlock({tag:"div"})
-				+m-borderBottomTitle01({tag:"h3",text:"数字リスト"})
-				+m-decimalList01
-					li 数字リスト
-						ul
-							li 数字リスト
-								ul
-									li 数字リスト
-		
-
-			+l-columnBlock({tag:"div"})
-				+m-borderBottomTitle01({tag:"h3",text:"テキストリンク"})
-				p
-					+m-linkModule01({url:"index.html"})
-						| テキストリンク
-
-			+l-columnBlock({tag:"div"})
-				+m-borderBottomTitle01({tag:"h3",text:"テーブル"})
-				+m-table01({tag:"div"})
-					thead
-						tr
-							th テキスト
-							th テキスト
-							th テキスト
-					tbody
-						tr
-							th テキスト
-							td!= DUMMY_TEXT_400
-							td
+									li!= DUMMY_TEXT_20
+										ul
+											li!= DUMMY_TEXT_20
+						
+						ol
+							li!= DUMMY_TEXT_50
 								ol
 									li!= DUMMY_TEXT_50
-									li!= DUMMY_TEXT_50
-			
+										ol
+											li!= DUMMY_TEXT_50
 			+l-columnBlock({tag:"div"})
-				+m-borderBottomTitle01({tag:"h3",text:"パンくず"})
-				+m-breadcrumb01([{text:"ホーム", url:"#"}, {text:"下層ページ", url:"#"}, {text:"下層ページ"}])
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"ディスクリスト"})
+					+m-borderBottomTitle01({tag:"h3",text:"ディスクリスト"})
+					+m-discList01
+						li ディスクリスト
+							ul
+								li ディスクリスト
+									ul
+										li ディスクリスト
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"数字リスト"})
+					+m-borderBottomTitle01({tag:"h3",text:"数字リスト"})
+					+m-decimalList01
+						li 数字リスト
+							ul
+								li 数字リスト
+									ul
+										li 数字リスト
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"テキストリンク"})
+					+m-borderBottomTitle01({tag:"h3",text:"テキストリンク"})
+					p
+						+m-linkModule01({url:"index.html"})
+							| テキストリンク
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"テーブル"})
+					+m-borderBottomTitle01({tag:"h3",text:"テーブル"})
+					+m-table01({tag:"div"})
+						thead
+							tr
+								th テキスト
+								th テキスト
+								th テキスト
+						tbody
+							tr
+								th テキスト
+								td!= DUMMY_TEXT_400
+								td
+									ol
+										li!= DUMMY_TEXT_50
+										li!= DUMMY_TEXT_50
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"パンくず"})
+					+m-breadcrumb01([{text:"ホーム", url:"#"}, {text:"下層ページ", url:"#"}, {text:"下層ページ"}])
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"ラベル"})
+					+m-textLabel01({tag:"p", text:"ラベル01", className:"is-red01"})

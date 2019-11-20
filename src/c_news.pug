@@ -13,9 +13,11 @@ block vars
 	- var jquery = "true"
 
 block contents
-	+l-contentsWidth({tag:"div"})
-		+l-mqWrapper({tag:"div"})
-			+l-columnBlock({tag:"div"})
+	+l-columnBlock({tag:"div"})
+		+l-contentsWidth({tag:"div"})
+			+l-mqWrapper({tag:"div"})
 				+c-newsSet01
-			+l-columnBlock({tag:"div"})
+	+l-columnBlock({tag:"div"})
+		+l-contentsWidth({tag:"div"})
+			+l-mqWrapper({tag:"div"})
 				+c-newsSet02

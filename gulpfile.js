@@ -137,7 +137,7 @@ const consolidate = require('gulp-consolidate');
 const fontName = 'myfont';
  
 gulp.task('iconfont', function(){
-	return gulp.src([url.src + url.icons + '*.svg'])
+	return gulp.src([url.src + url.fonts + url.icons + '*.svg'])
 	.pipe(iconfont({
 		fontName: fontName,
 		prependUnicode: true,
@@ -179,7 +179,7 @@ gulp.task('watch', function () {
 	gulp.watch(url.src + '**/*.styl', ['stylus']);
 	gulp.watch(url.src + url.images + '/**/*.+(jpg|jpeg|png|gif)', ['imagemin']);
 	gulp.watch(url.src + url.images + '/**/*.+(svg)', ['svgmin']);
-	gulp.watch(url.src + url.icons + '*.svg', ['iconfont']);
+	gulp.watch(url.src + url.fonts + url.icons + '*.svg', ['iconfont']);
 });
 
 gulp.task('build', ['webpack', 'jsVendor', 'pug', 'stylus', 'imagemin','svgmin']);

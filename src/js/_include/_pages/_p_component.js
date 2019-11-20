@@ -39,10 +39,10 @@ function memoSet01() {
 		content = '.group.is-primary';
 
 	$target.on('click',tab, function(){
-		$target.find(tab).removeClass('is-current');
-		$target.find(content).removeClass('is-current');
+		$(this).parents(".c-memoSet01").find(tab).removeClass('is-current');
+		$(this).parents(".c-memoSet01").find(content).removeClass('is-current');
 		$(this).addClass('is-current');
-		$target.find(content).eq($(this).index()).addClass('is-current');
+		$(this).parents(".c-memoSet01").find(content).eq($(this).index()).addClass('is-current');
 	});
 }
 

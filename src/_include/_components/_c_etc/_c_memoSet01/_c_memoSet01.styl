@@ -1,12 +1,23 @@
 .c-memoSet01
+	opacity 0.2
+	transition 0.3s all ease
+	+MQ_SP(SP_RES_WID)
+		display none
+	&:hover
+		opacity 1.0
 	.group
 		margin-bottom 20px
 		&.is-primary
 			display none
+			.area
+				&.is-text
+					// wysiwyg用
+					m-defaultTag()
 		&.is-current
 			display block
 	.area
 		margin-bottom 10px
+		
 		&:last-child
 			margin-bottom 0
 
@@ -18,7 +29,7 @@
 			code
 				color #333
 				background-color #f6f7f9
-
+		
 		.title
 			font-weight bold
 		.tab
@@ -27,11 +38,11 @@
 			li
 				cursor pointer
 				margin-right 5px
-				padding 10px 15px
+				padding 5px 10px
 				color #FFF
-				background-color #000
+				background-color #666
 				border-radius 5px 5px 0 0
-				fontSize(12)
+				fontSize(10)
 				font-weight bold
 				line-height 1.0
 

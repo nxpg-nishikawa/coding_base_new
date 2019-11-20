@@ -17,18 +17,19 @@ block contents
 		+l-mqWrapper({tag:"div"})
 
 			+l-columnBlock({tag:"div"})
-				//- 繰り返しのとき
-				+c-btnSet01({tag:"div", colClass:"is-two",
-					list:[{tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"},
-						{tag:"p",text:"ボタン02", url:"index.html"},
-						{tag:"p",text:"ボタン03", url:"index.html"}
-					]
-				})
-				//- 個別にタグ指定したいとき
-				//- +c-btnSet01({tag:"div", className: "is-center", colClass:"is-two"})
-				//- 	li
-				//- 		+m-btn01({tag:"p",text:"ボタン01", url:"index.html"})
-				//- 	li
-				//- 		+m-btn01({tag:"p",text:"ボタン02", url:"index.html"})
-				//- 	li
-				//- 		+m-btn01({tag:"p",text:"ボタン02", url:"index.html"})
+				+l-columnBox({tag:"div"})
+					//- 繰り返しのとき
+					+c-btnSet01({tag:"div", colClass:"is-two",
+						list:[{tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"},
+							{tag:"p",text:"ボタン02", url:"index.html"},
+							{tag:"p",text:"ボタン03", url:"index.html"}
+						]
+					})
+					//- 個別にタグ指定したいとき
+					//- +c-btnSet01({tag:"div", className: "is-center", colClass:"is-two"})
+					//- 	li
+					//- 		+m-btn01({tag:"p",text:"ボタン01", url:"index.html"})
+					//- 	li
+					//- 		+m-btn01({tag:"p",text:"ボタン02", url:"index.html"})
+					//- 	li
+					//- 		+m-btn01({tag:"p",text:"ボタン02", url:"index.html"})

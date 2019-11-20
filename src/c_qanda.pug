@@ -15,14 +15,15 @@ block vars
 block contents
 	+l-contentsWidth({tag:"div"})
 		+l-mqWrapper({tag:"div"})
-
-			+c-qandaSet01({tag:"div"})
-				+c-qandaList01({tag:"div", question:"タイトルが入ります", answer:DUMMY_TEXT_400})
-				+c-qandaList01({tag:"div", question:"タイトルが入ります", answer:"テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります"})
-				+c-qandaList01({tag:"div", question:"タイトルが入ります", answer:"テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります"})
-				+c-qandaList01({tag:"div", question:"タイトルが入ります", answer:"テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります"})
-				+c-qandaList01({tag:"div"})
-					mixin questionArea()
-						p.title タイトルが入ります
-					mixin answerArea()
-						p!= DUMMY_TEXT_400
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+c-qandaSet01({tag:"div"})
+						+c-qandaList01({tag:"div", question:"タイトルが入ります", answer:DUMMY_TEXT_400})
+						+c-qandaList01({tag:"div", question:"タイトルが入ります", answer:"テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります"})
+						+c-qandaList01({tag:"div", question:"タイトルが入ります", answer:"テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります"})
+						+c-qandaList01({tag:"div", question:"タイトルが入ります", answer:"テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります"})
+						+c-qandaList01({tag:"div"})
+							mixin questionArea()
+								p.title タイトルが入ります
+							mixin answerArea()
+								p!= DUMMY_TEXT_400
