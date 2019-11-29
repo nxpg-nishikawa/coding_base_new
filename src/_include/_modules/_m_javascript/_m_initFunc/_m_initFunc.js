@@ -1,8 +1,6 @@
 
 
 module.exports = (tg, op, flag) => {
-	const uaSet = require('./ua.js');
-
 	let timeoutId = 1, pageFlag;
 	let currentWidth = window.innerWidth;
 

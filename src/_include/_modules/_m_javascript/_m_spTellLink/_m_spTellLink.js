@@ -1,5 +1,5 @@
 module.exports = (op) => {
-	const uaSet = require('./ua.js');
+	const uaSet = require('../_m_ua/_m_ua.js');
 	
 	let _g_defaultOp = {
 		className: '.js-tellLink',

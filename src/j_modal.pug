@@ -1,10 +1,10 @@
 extends /_include/_template/_t_base_template
 
 block vars
-	- var KEY = "component"
-	- var URL = 'component.html'
+	- var KEY = "home"
+	- var URL = 'index.html'
 	- var RELATIVE_PATH = ''
-	- var TITLE = 'タイトル'
+	- var TITLE = 'ページリスト'
 	- var DESCRIPTION = ''
 	- var KEYWORDS = ''
 	- var header = "false"
@@ -15,7 +15,9 @@ block vars
 block contents
 	+l-contentsWidth({tag:"div"})
 		+l-mqWrapper({tag:"div"})
-			+l-columnBlock({tag:"div"})
-				+l-columnBox({tag:"div"})
-					+m-componentTitle01({tag:"p",text:"フォーム01"})
-					+c-formSet01
+			p
+				a(href="" data-simplemodal-target="modaltest").c-simpleModal01Target modalテスト
+
+			.c-simpleModal01#modaltest
+				p モーダル
+				p.is-close 閉じる

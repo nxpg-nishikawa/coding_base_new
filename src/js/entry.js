@@ -1,10 +1,9 @@
 'use strict'
 require("@babel/polyfill");
-const comSet = require('./_include/_pages/_p_common.js');
-const aboutSet = require('./_include/_pages/_p_about.js');
-const homeSet = require('./_include/_pages/_p_home.js');
-const componentSet = require('./_include/_pages/_p_component.js');
-const uaSet = require('./_include/_modules/ua.js');
+const comSet = require('../_include/_pages/_p_common/_p_common.js');
+const componentSet = require('../_include/_pages/_p_component/_p_component.js');
+const canvasSet = require('../_include/_pages/_p_canvas/_p_canvas.js');
+const uaSet = require('../_include/_modules/_m_javascript/_m_ua/_m_ua.js');
 
 let option = {
 	SP_WIDTH: 768,
@@ -14,8 +13,7 @@ let option = {
 }
 const init = () => {
 	comSet(option);
-	homeSet(option);
 	componentSet(option);
-	aboutSet(option);
+	canvasSet(option);
 }
 init();

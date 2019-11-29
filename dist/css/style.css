@@ -28855,6 +28855,19 @@ button.swiper-pagination-bullet {
   color: #333;
   background-color: #dfdfdf;
 }
+.c-simpleModal01 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+}
+.c-simpleModal01.is-active {
+  display: block;
+}
 @media screen and (min-width: 768px) {
   footer.c-footer01 .navBlock {
     padding: 10px;
@@ -32748,4 +32761,7 @@ HOVER(768px)
 }
 .c-qandaSet01 .textArea ol li {
   list-style: decimal;
+}
+html.is-component {
+  opacity: 1;
 }

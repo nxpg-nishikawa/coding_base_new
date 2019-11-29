@@ -1,12 +1,12 @@
-const initFunc = require('../_modules/initFunc.js');
+const initFunc = require('../../_modules/_m_javascript/_m_initFunc/_m_initFunc.js');
 
 // 追加module
-const matchHeight = require('../_modules/matchHeight.js');
-const smoothScroll = require('../_modules/smoothScroll.js');
-const spTellLink = require('../_modules/spTellLink.js');
-const accordionSet = require('../_modules/accordionSet.js');
-const inView = require('../_modules/inView.js');
-const slick = require('../_modules/slick.js');
+const matchHeight = require('../../_modules/_m_javascript/_m_matchHeight/_m_matchHeight.js');
+const smoothScroll = require('../../_modules/_m_javascript/_m_smoothScroll/_m_smoothScroll.js');
+const spTellLink = require('../../_modules/_m_javascript/_m_spTellLink/_m_spTellLink.js');
+const accordionSet = require('../../_modules/_m_javascript/_m_accordionSet/_m_accordionSet.js');
+const inView = require('../../_modules/_m_javascript/_m_inView/_m_inView.js');
+const slick = require('../../_modules/_m_javascript/_m_slick/_m_slick.js');
 
 // マークアップアコーディオン用
 function markupBlock() {

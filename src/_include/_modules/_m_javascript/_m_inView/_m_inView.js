@@ -1,7 +1,7 @@
 
 
 module.exports = (op) => {
-	const uaSet = require('./ua.js');
+	const uaSet = require('../_m_ua/_m_ua.js');
 	
 	// デフォルトオプション
 	let _g_defaultOp = {

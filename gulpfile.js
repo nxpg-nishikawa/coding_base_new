@@ -38,7 +38,7 @@ gulp.task('webpack', function() {
 //js_vendor
 const concat = require('gulp-concat');
 gulp.task('jsVendor', () => {
-	gulp.src(url.src + url.js + '_include/_vendor/' + '**/*.js')
+	gulp.src(url.src + '_include/_vendor/' + '**/*/*.js')
 		.pipe(concat('vendor.js'))
 		.pipe(gulp.dest(url.dist + url.js));
 });
@@ -173,7 +173,9 @@ gulp.task('iconfont', function(){
 //watch
 gulp.task('watch', function () {
 	gulp.watch(url.src + url.js + 'entry.js', ['webpack']);
-	gulp.watch(url.src + url.js + '_include/' + '**/*.js', ['webpack']);
+	// gulp.watch(url.src + url.js + '_include/' + '**/*.js', ['webpack']);
+	gulp.watch(url.src + '**/*.js', ['webpack']);
+
 	gulp.watch(url.src + url.js + '_include/_vendor' + '**/*.js', ['jsVendor']);
 	gulp.watch([url.src + '**/*.pug', '!' + url.src + '**/_*.pug'], ['pug']);
 	gulp.watch(url.src + '**/*.styl', ['stylus']);
