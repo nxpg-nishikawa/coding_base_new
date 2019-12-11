@@ -1,0 +1,503 @@
+extends /_include/_template/_t_base_template
+
+block vars
+	-
+		var pageOption = {
+			KEY: "component",
+			URL: '',
+			RELATIVE_PATH: '../',
+			TITLE: '',
+			DESCRIPTION: '',
+			KEYWORDS: '',
+			side: [false,"left"],
+			HEADER: false,
+			FOOTER: false,
+			SIDE: false,
+			jquery: true
+		}
+
+block contents
+	+l-contentsWidth({tag:"div"})
+		+l-mqWrapper({tag:"div"})
+			//- 分割セット01 ---------------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"h3",text:"均等分割セット01"})
+					+c-halfSet01({col:{tag:"div", className:"is-two"}})
+						mixin primaryGroup()
+							.col
+								.block.is-image
+									.area.is-image
+										+m-imageSet01({imageTag:"p", imageUrl: 'https://placeimg.com/375/232/animals'})
+								.block.is-text
+									.area.is-title
+										+m-borderLeftTitle01({tag:"h3", title:"左線タイトル01"})
+									.area.is-text
+										p!= DUMMY_TEXT_50
+									.area.is-sub
+										p 2019.09.07
+							.col
+								.block.is-image
+									.area.is-image
+										+m-imageSet01({imageTag:"p", imageUrl: 'https://placeimg.com/375/232/animals'})
+								.block.is-text
+									.area.is-title
+										+m-borderLeftTitle01({tag:"h3", title:"左線タイトル01"})
+									.area.is-text
+										p!= DUMMY_TEXT_50
+									.area.is-sub
+										p 2019.09.07
+							.col
+								.block.is-text
+									.area.is-title
+										+m-borderLeftTitle01({tag:"h3", title:"左線タイトル01"})
+									.area.is-text
+										p!= DUMMY_TEXT_50
+									.area.is-sub
+										p 2019.09.07
+							.col
+								.block.is-text
+									.area.is-title
+										+m-borderLeftTitle01({tag:"h3", title:"左線タイトル01"})
+									.area.is-text
+										p!= DUMMY_TEXT_50
+									.area.is-sub
+										p 2019.09.07
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li 
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+			//- 分割セット02 ---------------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"h3",text:"均等分割セット02"})
+					+c-halfSet02({col:{tag:"div", className:"is-two"}})
+						mixin primaryGroup()
+							.col
+								.block.is-image
+									.area.is-image
+										+m-imageSet01({imageTag:"p", className:"is-imageFull", imageUrl: 'https://placeimg.com/375/232/animals'})
+								.block.is-text
+									.area.is-title
+										+m-borderLeftTitle01({tag:"h3", title:"左線タイトル01"})
+									.area.is-text
+										p!= DUMMY_TEXT_50
+									.area.is-sub
+										p 2019.09.07
+							.col
+								.block.is-image
+									.area.is-image
+										+m-imageSet01({imageTag:"p", className:"is-imageFull", imageUrl: 'https://placeimg.com/375/232/animals'})
+								.block.is-text
+									.area.is-title
+										+m-borderLeftTitle01({tag:"h3", title:"左線タイトル01"})
+									.area.is-text
+										p!= DUMMY_TEXT_50
+									.area.is-sub
+										p 2019.09.07
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li 
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+
+			//- 固定要素+コンテンツセット01 ---------------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+c-fixedHalfSet01({tag:"div", before:true, after:true})
+						mixin beforeGroup()
+							.block.is-text
+								.area.is-title
+									+m-componentTitle01({tag:"h3",text:"固定要素+コンテンツセット01"})
+								.area.is-text
+									p テキスト
+
+						mixin primaryGroup()
+							.block.is-fixed
+								.area.is-image
+									+m-imageSet01({imageTag:"figure", imageUrl: 'https://placeimg.com//400/250/animals'})
+										figcaption テキストが入ります
+							.block.is-contents
+								.area.is-title
+									+m-borderLeftTitle01({tag:"h3", title:"左線タイトル01"})
+								.area.is-text
+									p!= DUMMY_TEXT_400
+
+						mixin afterGroup()
+							.block.is-text
+								.area.is-sub
+									p テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+
+				+l-columnBox({tag:"div"})
+					+c-fixedHalfSet01({tag:"div", className: "is-contentsLeft"})
+						mixin primaryGroup()
+							.block.is-fixed
+								.area.is-btn
+									ul
+										+m-btn01({tag:"li",text:"ボタン01", url:"index.html", className:"is-icon"})
+										+m-btn01({tag:"li",text:"ボタン01", url:"index.html", className:"is-icon"})
+										+m-btn01({tag:"li",text:"ボタン01", url:"index.html", className:"is-icon"})
+
+							.block.is-contents
+								.area.is-title
+									+m-borderLeftTitle01({tag:"h3", title:"左線タイトル01"})
+
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li c-fixedHalfSet01
+										li m-imageSet01
+										li m-defaultTag
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+											.
+												+c-fixedHalfSet01({tag:"div"})
+													mixin primaryGroup()
+														.block.is-fixed
+															.area.is-image
+																+m-imageSet01({imageTag:"p", imageUrl: '画像URL'})
+														.block.is-contents
+															.area.is-title
+																タイトルが入ります
+															.area.is-text
+																テキストが入ります
+								.area.is-code
+									pre
+										code.stylus
+											.
+												+c-fixedHalfSet01({
+													tag:       "div",           //親タグ名
+													baseName:  "c-fixedHalfSet01", //ベースclass名
+													className: "is-contentsRight", //追加class名
+													before:    false,           //before コンテンツ
+													after:     false            //after コンテンツ
+												})
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+											.
+												.c-fixedHalfSet01.is-contentsRight//追加class名
+													.group.is-before
+														//ここにbeforeコンテンツが入る
+													.group.is-primary
+														.block.is-fixed
+															.area.is-image
+																//画像
+														.block.is-contents
+															.area.is-title
+																//タイトル
+															.area.is-text
+																//テキスト
+													.group.is-after
+														//ここにafterコンテンツが入る
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+												<div class="c-fixedHalfSet01 is-contentsRight//追加class名
+													<div class="group is-before">
+														//ここにbeforeコンテンツが入る
+													</div>
+													<div class="group is-primary">
+														<div class="block is-fixed">
+															<div class="area is-image">
+																//画像
+															</div>
+														</div>
+														<div class="block is-contents">
+															<div class="area is-title">
+																//タイトル
+															</div>
+															<div class="area is-text">
+																//テキスト
+															</div>
+															<div class="area is-sub">
+																//サブコンテンツ
+															</div>
+														</div>
+													</div>
+													<div class="group is-after">
+														//ここにafterコンテンツが入る
+													</div>
+												</div>
+
+			//- 固定要素+コンテンツセット02 ---------------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+c-fixedHalfSet02({tag:"div", before:true})
+						mixin beforeGroup()
+							.block.is-text
+								.area.is-title
+									+m-componentTitle01({tag:"h3",text:"固定要素+コンテンツセット02"})
+						mixin primaryGroup()
+							.block.is-fixed
+								.area.is-image
+									+m-imageSet01({imageTag:"figure", imageUrl: 'https://placeimg.com//400/250/animals'})
+										figcaption テキストが入ります
+								.area.is-btn
+									ul
+										+m-btn01({tag:"li",text:"ボタン01", url:"index.html", className:"is-icon"})
+
+							.block.is-text
+								.area.is-title
+									+m-borderLeftTitle01({tag:"h3", title:"左線タイトル01"})
+								.area.is-text
+									p!= DUMMY_TEXT_200
+									p!= DUMMY_TEXT_400
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li 
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+
+			//- 可変要素+可変コンテンツセット01 ---------------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+c-liquidHalfSet01({tag:"div", className:"is-contentsLeft", before:true})
+						mixin beforeGroup()
+							.block.is-text
+								.area.is-title
+									+m-componentTitle01({tag:"h3",text:"可変要素+可変コンテンツセット01"})
+						mixin primaryGroup()
+							.block.is-contents
+								.area.is-image(style='background-image: url(https://placeimg.com//400/250/animals)')
+							.block.is-contents
+								.blockWrapper
+									.area.is-title
+										+m-borderLeftTitle01({tag:"h3", title:"左線タイトル01"})
+									.area.is-text
+										p!= DUMMY_TEXT_100
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li 
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+
+			//- 背景要素+コンテンツセット01 ---------------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+c-bgContentsSet01({tag:"div", className:"is-contentsRight", before:true})
+						mixin beforeGroup()
+							.block.is-text
+								.area.is-title
+									+m-componentTitle01({tag:"h3",text:"背景要素+コンテンツセット01"})
+						mixin primaryGroup()
+							.block.is-contents
+								.area.is-image(style='background-image: url(https://placeimg.com//700/400/animals)')
+							.block.is-contents
+								.area.is-title
+									+m-borderLeftTitle01({tag:"h3", title:"左線タイトル01"})
+								.area.is-text
+									p!= DUMMY_TEXT_100
+								.area.is-btn
+									ul
+										+m-btn01({tag:"li",text:"ボタン01", url:"index.html", className:"is-icon"})
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li 
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+
+
+			//- 背景要素+コンテンツセット02 ---------------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+c-bgContentsSet02({tag:"div", before:true})
+						mixin beforeGroup()
+							.block.is-text
+								.area.is-title
+									+m-componentTitle01({tag:"h3",text:"背景画像+テキスト01"})
+								.area.is-text
+									p テキスト
+						mixin primaryGroup()
+							.block.is-bg
+								.area.is-image(style='background-image: url(https://placeimg.com//960/400/animals)')
+							.block.is-contents
+								.area.is-text
+									p!= DUMMY_TEXT_100
+								.area.is-btn
+									ul
+										+m-btn01({tag:"li",text:"ボタン01", url:"index.html", className:"is-icon"})
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li 
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+extends /_include/_template/_t_base_template
+
+block vars
+	-
+		var pageOption = {
+			KEY: "component",
+			URL: '',
+			RELATIVE_PATH: '../',
+			TITLE: '',
+			DESCRIPTION: '',
+			KEYWORDS: '',
+			HEADER: false,
+			FOOTER: false,
+			SIDE: false,
+			jquery: true
+		}
+
+block contents
+	+l-contentsWidth({tag:"div"})
+		+l-mqWrapper({tag:"div"})
+			//- 画像モジュール01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"画像モジュール01"})
+					+m-imageSet01({imageTag:"figure", imageUrl: 'https://placeimg.com/400/150/animals'})
+						figcaption テキストが入ります
+				+l-columnBox({tag:"div"})
+					+m-imageSet01({imageTag:"p", imageUrl: 'https://placeimg.com/400/150/animals'})
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li ダウンロード
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-imageSet01
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li
+											a(href=pageOption.RELATIVE_PATH + "file/_m_imageSet01.zip") _m_imageSet01.zip
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html

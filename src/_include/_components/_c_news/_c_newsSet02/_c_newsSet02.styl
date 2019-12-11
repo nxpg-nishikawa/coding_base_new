@@ -1,6 +1,7 @@
 .c-newsSet02
 	li
-		flexBox()
+		display flex
+		flex-wrap wrap
 		
 		&:nth-of-type(odd)
 			a
@@ -8,19 +9,21 @@
 
 	.titleBlock
 		width 170px
-		flexBox()
+		display flex
+		flex-wrap wrap
 		aline-items center
 		padding-top 3px
-		+MQ_SP(SP_RES_WID)
+		+MQ_SP(SP_RES_WID01)
 			width 100%
 
 	.textBlock
 		width calc(100% - 170px)
-		+MQ_SP(SP_RES_WID)
+		+MQ_SP(SP_RES_WID01)
 			width 100%
 	
 	a
-		flexBox()
+		display flex
+		flex-wrap wrap
 		position relative
 		width 100%
 		padding 15px 40px 15px 15px
@@ -29,7 +32,7 @@
 		
 		iconTagSet('.text')
 
-		+HOVER(SP_RES_WID)
+		+HOVER(SP_RES_WID01)
 			.text
 				text-decoration: none
 

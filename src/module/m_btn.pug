@@ -1,0 +1,149 @@
+extends /_include/_template/_t_base_template
+
+block vars
+	-
+		var pageOption = {
+			KEY: "component",
+			URL: '',
+			RELATIVE_PATH: '../',
+			TITLE: '',
+			DESCRIPTION: '',
+			KEYWORDS: '',
+			HEADER: false,
+			FOOTER: false,
+			SIDE: false,
+			jquery: true
+		}
+
+block contents
+	+l-contentsWidth({tag:"div"})
+		+l-mqWrapper({tag:"div"})
+			//- ボタン01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"ボタン01"})
+					+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li ダウンロード
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-btn01
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li
+											a(href=pageOption.RELATIVE_PATH + "file/_m_btn01.zip") _m_btn01.zip
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+			//- ボタン02 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"ボタン02"})
+					+m-btn02({tag:"p",text:"ボタン02", url:"index.html", className:"is-icon"})
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li ダウンロード
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-btn02
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li
+											a(href=pageOption.RELATIVE_PATH + "file/_m_btn02.zip") _m_btn02.zip
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+			//- ページャー01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"ページャー01"})
+					+m-pager01([{list:"1"},{list:"2",url:"#"}])
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li ダウンロード
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-pager01
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li
+											a(href=pageOption.RELATIVE_PATH + "file/_m_pager01.zip") _m_pager01.zip
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html

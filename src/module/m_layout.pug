@@ -1,0 +1,158 @@
+extends /_include/_template/_t_base_template
+
+block vars
+	-
+		var pageOption = {
+			KEY: "component",
+			URL: '',
+			RELATIVE_PATH: '../',
+			TITLE: '',
+			DESCRIPTION: '',
+			KEYWORDS: '',
+			HEADER: false,
+			FOOTER: false,
+			SIDE: false,
+			jquery: true
+		}
+
+block contents
+	+l-contentsWidth({tag:"div"})
+		+l-mqWrapper({tag:"div"})
+			//- 分割レイアウト ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+m-componentTitle01({tag:"p",text:"分割レイアウト"})
+				+l-columnBox({tag:"div"})
+					+l-colSet01({tag:"ul", className:"is-two"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+				+l-columnBox({tag:"div"})
+					+l-colSet01({tag:"ul", className:"is-three"})
+						li ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+						li いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい
+						li えええええええええええええええええええええええええええええええええええええええええ
+						li おおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li l-colSet01
+						.group.is-primary
+							.block.is-text
+								.area.is-code.is-text
+									pre
+										code.stylus
+											.
+												+l-colSet01({tag:"ul", className:"is-three"})
+													li あああ
+													li いいい
+								.area.is-code.is-text
+									p
+										| 【margin変更したいとき】<br>
+										| 
+									pre
+										code.stylus
+											.
+												【margin変更したいとき】
+												.l-colSet01({col:カラム数, margin:間隔})
+												カラム数に、並べたい数を入れる。間隔にカラムの間隔を入れる。
+												カラム数がspのとき必ずしも一つになるとは限らないので、spとpcとで記述を分ける。
+												他のコンポーネントで、間隔変えたいときは以下のように書いて上書きしてあげるといい
+									pre
+										code.stylus
+											.
+												&.is-two
+													+MQ_PC(SP_RES_WID01)
+														l-colSet01({col:2, margin:PC_MARGIN})
+													+MQ_SP(SP_RES_WID01)
+														l-colSet01({col:1, margin:SP_MARGIN})
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+											.
+												ul.l-colSet01.is-two
+													li
+														要素
+													li
+														要素
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+												<ul class="l-colSet01 is-two">
+													<li>
+														要素
+													</li>
+													<li>
+														要素
+													</li>
+												</ul>
+			//- pc表示 sp表示 切り替え ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+m-componentTitle01({tag:"p",text:"pc表示 sp表示 切り替え"})
+				+l-columnBox({tag:"div"})
+					p.is-pcOnly pcのみ表示
+					p.is-spOnly spのみ表示
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li is-pcOnly
+										li is-spOnly
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+											.
+												classをつけてあげるだけ。↓でも使える
+												+is-pcOnly
+													要素
+												+is-spOnly
+													要素
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+											.
+												p.is-pcOnly pcのみ表示
+												p.is-spOnly spのみ表示
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+												<div class="l-columnBox">
+													<p class="is-pcOnly">pcのみ表示</p>
+													<p class="is-spOnly">spのみ表示</p>
+												</div>
+			

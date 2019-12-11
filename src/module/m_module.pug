@@ -1,0 +1,1036 @@
+extends /_include/_template/_t_base_template
+
+block vars
+	-
+		var pageOption = {
+			KEY: "component",
+			URL: '',
+			RELATIVE_PATH: '../',
+			TITLE: '',
+			DESCRIPTION: '',
+			KEYWORDS: '',
+			HEADER: false,
+			FOOTER: false,
+			SIDE: false,
+			jquery: true
+		}
+
+block contents
+	+l-contentsWidth({tag:"div"})
+		+l-mqWrapper({tag:"div"})
+			//- 分割レイアウト ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+m-componentTitle01({tag:"p",text:"分割レイアウト"})
+				+l-columnBox({tag:"div"})
+					+l-colSet01({tag:"ul", className:"is-two"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+				+l-columnBox({tag:"div"})
+					+l-colSet01({tag:"ul", className:"is-three"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+				+l-columnBox({tag:"div"})
+					+l-colSet01({tag:"ul", className:"is-four"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+				+l-columnBox({tag:"div"})
+					+l-colSet01({tag:"ul", className:"is-five"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+				+l-columnBox({tag:"div"})
+					+l-colSet01({tag:"ul", className:"is-six"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						li
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li l-colSet01
+						.group.is-primary
+							.block.is-text
+								.area.is-code.is-text
+									p
+										| 【margin変更したいとき】<br>
+										| 
+									pre
+										code.stylus
+											.
+												【margin変更したいとき】
+												.l-colSet01({col:カラム数, margin:間隔})
+												カラム数に、並べたい数を入れる。間隔にカラムの間隔を入れる。
+												カラム数がspのとき必ずしも一つになるとは限らないので、spとpcとで記述を分ける。
+												他のコンポーネントで、間隔変えたいときは以下のように書いて上書きしてあげるといい
+									pre
+										code.stylus
+											.
+												&.is-two
+													+MQ_PC(SP_RES_WID01)
+														l-colSet01({col:2, margin:PC_MARGIN})
+													+MQ_SP(SP_RES_WID01)
+														l-colSet01({col:1, margin:SP_MARGIN})
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+											.
+												ul.l-colSet01.is-two
+													li
+														要素
+													li
+														要素
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+												<ul class="l-colSet01 is-two">
+													<li>
+														要素
+													</li>
+													<li>
+														要素
+													</li>
+												</ul>
+			//- pc表示 sp表示 切り替え ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+m-componentTitle01({tag:"p",text:"pc表示 sp表示 切り替え"})
+				+l-columnBox({tag:"div"})
+					p.is-pcOnly pcのみ表示
+					p.is-spOnly spのみ表示
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li is-pcOnly
+										li is-spOnly
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+											.
+												classをつけてあげるだけ。↓でも使える
+												+is-pcOnly
+													要素
+												+is-spOnly
+													要素
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+											.
+												p.is-pcOnly pcのみ表示
+												p.is-spOnly spのみ表示
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+												<div class="l-columnBox">
+													<p class="is-pcOnly">pcのみ表示</p>
+													<p class="is-spOnly">spのみ表示</p>
+												</div>
+			//- 背景タイトル01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+m-componentTitle01({tag:"p", text:"背景タイトル01"})
+				+l-columnBox({tag:"div"})
+					+m-bgTitle01({tag:"h3", largeTitle:"大タイトル", title:"背景タイトル01（全要素表示）", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+						mixin beforeGroup()
+							p beforeテキスト
+						mixin titleBefore()
+							+m-textLabel01({tag:"p", text:"ラベル01", className:"is-red01"})
+						mixin titleAfter()
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						mixin afterGroup()
+							p afterテキスト
+					+m-bgTitle01({tag:"h3", title:"背景タイトル01"})
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-bgTitle01
+						.group.is-primary
+							.block.is-text
+								.area.is-code.is-text
+									p
+										| コンテンツの前に要素を入れる必要がある場合、<br>
+										| before:trueにして、 mixin beforeGroup()を宣言することで、
+										| 要素の挿入ができる。<br>
+										| コンテンツの後ろ、タイトルの前後についても<br>
+										| 以下のオプションをtrueにすることで、挿入可能。
+									p
+										| 小タイトル、中タイトル、大タイトルについても必要であれば、<br>
+										| smallTitle, title, largeTitleを使用することで挿入可能。<br>
+										| (デフォルトで使用するのは title)
+									pre
+										code.stylus
+											.
+												+c-bgTitle01({
+													tag:          "div",                //親タグ名
+													baseName:     "c-bgTitle01",   //ベースclass名
+													title:        "",                   // タイトル
+													smallTitle:   "",                   // 中タイトル
+													largeTitle:   "",                   // 大タイトル
+													className:    "",                   //追加class名
+													before:       false,                //コンテンツの前に入る要素
+													after:        false,                //コンテンツの後ろに入る要素
+													titleBefore:  false,                //タイトルの前に入る要素
+													titleAfter:   false                 //タイトルの後ろに入る要素
+												})
+								.area.is-code
+									p 【シンプル】
+									pre
+										code.stylus
+											.
+												+m-bgTitle01({tag:"h3", title:"背景タイトル01"})
+								.area.is-code
+									p 【全要素表示】
+									pre
+										code.stylus
+											.
+												+m-bgTitle01({tag:"h3", largeTitle:"大タイトル", title:"背景タイトル01（全要素表示）", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+													mixin beforeGroup()
+														// コンテンツの前に入る要素
+													mixin titleBefore()
+														// タイトルの前に入る要素
+													mixin titleAfter()
+														// タイトルの後に入る要素
+													mixin afterGroup()
+														// コンテンツの後に入る要素
+														p afterテキスト
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+											.
+												.m-bgTitle01
+													.group.is-primary
+														h3.com-title
+															span.is-title tg.title
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+												<div class="m-bgTitle01">
+													<div class="group is-primary">
+														<h3 class="com-title"><span class="is-title">背景タイトル01</span></h3>
+													</div>
+												</div>
+			//- ラージタイトル01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"ラージタイトル01"})
+					+m-largeTitle01({tag:"h3", largeTitle:"大タイトル", title:"ラージタイトル01（全要素表示）", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+						mixin beforeGroup()
+							p beforeテキスト
+						mixin titleBefore()
+							+m-textLabel01({tag:"p", text:"ラベル01", className:"is-red01"})
+						mixin titleAfter()
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						mixin afterGroup()
+							p afterテキスト
+					+m-largeTitle01({tag:"h3", title:"ラージタイトル01"})
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-largeTitle01
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									p
+										| 背景タイトル01とほぼ同じ
+									pre
+										code.stylus
+											.
+												+c-largeTitle0101({
+													tag:          "div",                //親タグ名
+													baseName:     "c-largeTitle0101",   //ベースclass名
+													title:        "",                   // タイトル
+													smallTitle:   "",                   // 中タイトル
+													largeTitle:   "",                   // 大タイトル
+													className:    "",                   //追加class名
+													before:       false,                //コンテンツの前に入る要素
+													after:        false,                //コンテンツの後ろに入る要素
+													titleBefore:  false,                //タイトルの前に入る要素
+													titleAfter:   false                 //タイトルの後ろに入る要素
+												})
+								.area.is-code
+									p 【シンプル】
+									pre
+										code.stylus
+											.
+												+m-largeTitle01({tag:"h3", title:"タイトル"})
+								.area.is-code
+									p 【全要素表示】
+									pre
+										code.stylus
+											.
+												+m-largeTitle01({tag:"h3", largeTitle:"大タイトル", title:"タイトル", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+													mixin beforeGroup()
+														// コンテンツの前に入る要素
+													mixin titleBefore()
+														// タイトルの前に入る要素
+													mixin titleAfter()
+														// タイトルの後に入る要素
+													mixin afterGroup()
+														// コンテンツの後に入る要素
+														p afterテキスト
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+											.
+												.m-largeTitle01
+													.group.is-primary
+														h3.com-title
+															span.is-title tg.title
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+												<div class="m-largeTitle01">
+													<div class="group is-primary">
+														<h3 class="com-title"><span class="is-title">背景タイトル01</span></h3>
+													</div>
+												</div>
+			//- 下線タイトル01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"下線タイトル01"})
+					+m-borderBottomTitle01({tag:"h3", largeTitle:"大タイトル", title:"下線タイトル01（全要素表示）", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+						mixin beforeGroup()
+							p beforeテキスト
+						mixin titleBefore()
+							+m-textLabel01({tag:"p", text:"ラベル01", className:"is-red01"})
+						mixin titleAfter()
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						mixin afterGroup()
+							p afterテキスト
+					+m-borderBottomTitle01({tag:"h3", title:"下線タイトル01"})
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-borderBottomTitle01
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									p
+										| 背景タイトル01とほぼ同じ
+									pre
+										code.stylus
+											.
+												+c-borderBottomTitle01({
+													tag:          "div",                //親タグ名
+													baseName:     "c-borderBottomTitle01",   //ベースclass名
+													title:        "",                   // タイトル
+													smallTitle:   "",                   // 中タイトル
+													largeTitle:   "",                   // 大タイトル
+													className:    "",                   //追加class名
+													before:       false,                //コンテンツの前に入る要素
+													after:        false,                //コンテンツの後ろに入る要素
+													titleBefore:  false,                //タイトルの前に入る要素
+													titleAfter:   false                 //タイトルの後ろに入る要素
+												})
+								.area.is-code
+									p 【シンプル】
+									pre
+										code.stylus
+											.
+												+m-borderBottomTitle01({tag:"h3", title:"タイトル"})
+								.area.is-code
+									p 【全要素表示】
+									pre
+										code.stylus
+											.
+												+m-borderBottomTitle01({tag:"h3", largeTitle:"大タイトル", title:"タイトル", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+													mixin beforeGroup()
+														// コンテンツの前に入る要素
+													mixin titleBefore()
+														// タイトルの前に入る要素
+													mixin titleAfter()
+														// タイトルの後に入る要素
+													mixin afterGroup()
+														// コンテンツの後に入る要素
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+											.
+												.m-borderBottomTitle01
+													.group.is-primary
+														h3.com-title
+															span.is-title tg.title
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+												<div class="m-borderBottomTitle01">
+													<div class="group is-primary">
+														<h3 class="com-title"><span class="is-title">背景タイトル01</span></h3>
+													</div>
+												</div>
+			//- 左線タイトル01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"左線タイトル01"})
+					+m-borderLeftTitle01({tag:"h3", largeTitle:"大タイトル", title:"左線タイトル01（全要素表示）", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+						mixin beforeGroup()
+							p beforeテキスト
+						mixin titleBefore()
+							+m-textLabel01({tag:"p", text:"ラベル01", className:"is-red01"})
+						mixin titleAfter()
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						mixin afterGroup()
+							p afterテキスト
+					+m-borderLeftTitle01({tag:"h3", title:"左線タイトル01"})
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-borderLeftTitle01
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									p
+										| 背景タイトル01とほぼ同じ
+									pre
+										code.stylus
+											.
+												+c-borderLeftTitle01({
+													tag:          "div",                //親タグ名
+													baseName:     "c-borderLeftTitle01",   //ベースclass名
+													title:        "",                   // タイトル
+													smallTitle:   "",                   // 中タイトル
+													largeTitle:   "",                   // 大タイトル
+													className:    "",                   //追加class名
+													before:       false,                //コンテンツの前に入る要素
+													after:        false,                //コンテンツの後ろに入る要素
+													titleBefore:  false,                //タイトルの前に入る要素
+													titleAfter:   false                 //タイトルの後ろに入る要素
+												})
+								.area.is-code
+									p 【シンプル】
+									pre
+										code.stylus
+											.
+												+m-borderLeftTitle01({tag:"h3", title:"タイトル"})
+								.area.is-code
+									p 【全要素表示】
+									pre
+										code.stylus
+											.
+												+m-borderLeftTitle01({tag:"h3", largeTitle:"大タイトル", title:"タイトル", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+													mixin beforeGroup()
+														// コンテンツの前に入る要素
+													mixin titleBefore()
+														// タイトルの前に入る要素
+													mixin titleAfter()
+														// タイトルの後に入る要素
+													mixin afterGroup()
+														// コンテンツの後に入る要素
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+											.
+												.m-borderLeftTitle01
+													.group.is-primary
+														h3.com-title
+															span.is-title tg.title
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+												<div class="m-borderLeftTitle01">
+													<div class="group is-primary">
+														<h3 class="com-title"><span class="is-title">背景タイトル01</span></h3>
+													</div>
+												</div>
+			//- 右線タイトル01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"右線タイトル01"})
+					+m-borderRightTitle01({tag:"h3", largeTitle:"大タイトル", title:"右線タイトル01（全要素表示）", smallTitle:"少タイトル", before:true, after:true, titleBefore:true, titleAfter:true})
+						mixin beforeGroup()
+							p beforeテキスト
+						mixin titleBefore()
+							+m-textLabel01({tag:"p", text:"ラベル01", className:"is-red01"})
+						mixin titleAfter()
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						mixin afterGroup()
+							p afterテキスト
+					+m-borderRightTitle01({tag:"h3", title:"右線タイトル01"})
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-borderRightTitle01
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									p
+										| 背景タイトル01とほぼ同じ
+									pre
+										code.stylus
+											.
+												+c-borderRightTitle01({
+													tag:          "div",                //親タグ名
+													baseName:     "c-borderRightTitle01",   //ベースclass名
+													title:        "",                   // タイトル
+													smallTitle:   "",                   // 中タイトル
+													largeTitle:   "",                   // 大タイトル
+													className:    "",                   //追加class名
+													before:       false,                //コンテンツの前に入る要素
+													after:        false,                //コンテンツの後ろに入る要素
+													titleBefore:  false,                //タイトルの前に入る要素
+													titleAfter:   false                 //タイトルの後ろに入る要素
+												})
+								.area.is-code
+									p 【シンプル】
+									pre
+										code.stylus
+											.
+												+m-borderRightTitle01({tag:"h3", title:"タイトル"})
+								.area.is-code
+									p 【全要素表示】
+									pre
+										code.stylus
+											.
+												+m-borderRightTitle01({tag:"h3", largeTitle:"大タイトル", title:"タイトル", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+													mixin beforeGroup()
+														// コンテンツの前に入る要素
+													mixin titleBefore()
+														// タイトルの前に入る要素
+													mixin titleAfter()
+														// タイトルの後に入る要素
+													mixin afterGroup()
+														// コンテンツの後に入る要素
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+											.
+												.m-borderRightTitle01
+													.group.is-primary
+														h3.com-title
+															span.is-title tg.title
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+												<div class="m-borderRightTitle01">
+													<div class="group is-primary">
+														<h3 class="com-title"><span class="is-title">背景タイトル01</span></h3>
+													</div>
+												</div>
+			//- 上線タイトル01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"上線タイトル01"})
+					+m-borderTopTitle01({tag:"h3", largeTitle:"大タイトル", title:"上線タイトル01（全要素表示）", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+						mixin beforeGroup()
+							p beforeテキスト
+						mixin titleBefore()
+							+m-textLabel01({tag:"p", text:"ラベル01", className:"is-red01"})
+						mixin titleAfter()
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						mixin afterGroup()
+							p afterテキスト
+					+m-borderTopTitle01({tag:"h3", title:"上線タイトル01"})
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-borderTopTitle01
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									p
+										| 背景タイトル01とほぼ同じ
+									pre
+										code.stylus
+											.
+												+c-borderTopTitle01({
+													tag:          "div",                //親タグ名
+													baseName:     "c-borderTopTitle01",   //ベースclass名
+													title:        "",                   // タイトル
+													smallTitle:   "",                   // 中タイトル
+													largeTitle:   "",                   // 大タイトル
+													className:    "",                   //追加class名
+													before:       false,                //コンテンツの前に入る要素
+													after:        false,                //コンテンツの後ろに入る要素
+													titleBefore:  false,                //タイトルの前に入る要素
+													titleAfter:   false                 //タイトルの後ろに入る要素
+												})
+								.area.is-code
+									p 【シンプル】
+									pre
+										code.stylus
+											.
+												+m-borderTopTitle01({tag:"h3", title:"タイトル"})
+								.area.is-code
+									p 【全要素表示】
+									pre
+										code.stylus
+											.
+												+m-borderTopTitle01({tag:"h3", largeTitle:"大タイトル", title:"タイトル", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+													mixin beforeGroup()
+														// コンテンツの前に入る要素
+													mixin titleBefore()
+														// タイトルの前に入る要素
+													mixin titleAfter()
+														// タイトルの後に入る要素
+													mixin afterGroup()
+														// コンテンツの後に入る要素
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+											.
+												.m-borderTopTitle01
+													.group.is-primary
+														h3.com-title
+															span.is-title tg.title
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+												<div class="m-borderTopTitle01">
+													<div class="group is-primary">
+														<h3 class="com-title"><span class="is-title">背景タイトル01</span></h3>
+													</div>
+												</div>
+			//- 上下線タイトル01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"上下線タイトル01"})
+					+m-borderTopBottomTitle01({tag:"h3", largeTitle:"大タイトル", title:"上下線タイトル01（全要素表示）", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+						mixin beforeGroup()
+							p beforeテキスト
+						mixin titleBefore()
+							+m-textLabel01({tag:"p", text:"ラベル01", className:"is-red01"})
+						mixin titleAfter()
+							+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+						mixin afterGroup()
+							p afterテキスト
+					+m-borderTopBottomTitle01({tag:"h3", title:"上下線タイトル01"})
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-borderTopBottomTitle01
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									p
+										| 背景タイトル01とほぼ同じ
+									pre
+										code.stylus
+											.
+												+c-borderTopBottomTitle01({
+													tag:          "div",                //親タグ名
+													baseName:     "c-borderTopBottomTitle01",   //ベースclass名
+													title:        "",                   // タイトル
+													smallTitle:   "",                   // 中タイトル
+													largeTitle:   "",                   // 大タイトル
+													className:    "",                   //追加class名
+													before:       false,                //コンテンツの前に入る要素
+													after:        false,                //コンテンツの後ろに入る要素
+													titleBefore:  false,                //タイトルの前に入る要素
+													titleAfter:   false                 //タイトルの後ろに入る要素
+												})
+								.area.is-code
+									p 【シンプル】
+									pre
+										code.stylus
+											.
+												+m-borderTopBottomTitle01({tag:"h3", title:"タイトル"})
+								.area.is-code
+									p 【全要素表示】
+									pre
+										code.stylus
+											.
+												+m-borderTopBottomTitle01({tag:"h3", largeTitle:"大タイトル", title:"タイトル", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+													mixin beforeGroup()
+														// コンテンツの前に入る要素
+													mixin titleBefore()
+														// タイトルの前に入る要素
+													mixin titleAfter()
+														// タイトルの後に入る要素
+													mixin afterGroup()
+														// コンテンツの後に入る要素
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+											.
+												.m-borderTopBottomTitle01
+													.group.is-primary
+														h3.com-title
+															span.is-title tg.title
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+												<div class="m-borderTopBottomTitle01">
+													<div class="group is-primary">
+														<h3 class="com-title"><span class="is-title">背景タイトル01</span></h3>
+													</div>
+												</div>
+			//- 画像モジュール01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"画像モジュール01"})
+					+m-imageSet01({imageTag:"figure", imageUrl: 'https://placeimg.com/400/400/animals'})
+						figcaption テキストが入ります
+				+l-columnBox({tag:"div"})
+					+m-imageSet01({imageTag:"p", imageUrl: 'https://placeimg.com/400/400/animals'})
+			//- デフォルトテキストセット(WYSIWYG) ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"デフォルトテキストセット(WYSIWYG)"})
+					+m-defaultTag({tag:"div"})
+						p!= DUMMY_TEXT_400
+
+						ul
+							li!= DUMMY_TEXT_50
+								ul
+									li!= DUMMY_TEXT_20
+										ul
+											li!= DUMMY_TEXT_20
+						
+						ol
+							li!= DUMMY_TEXT_50
+								ol
+									li!= DUMMY_TEXT_50
+										ol
+											li!= DUMMY_TEXT_50
+			//- ディスクリスト ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"ディスクリスト"})
+					+m-discList01
+						li ディスクリスト
+							ul
+								li ディスクリスト
+									ul
+										li ディスクリスト
+			//- 数字リスト ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"数字リスト"})
+					+m-decimalList01
+						li 数字リスト
+							ul
+								li 数字リスト
+									ul
+										li 数字リスト
+			//- テキストリンク ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"テキストリンク"})
+					p
+						+m-linkModule01({url:"index.html"})
+							| テキストリンク
+			//- テーブル ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"テーブル"})
+					+m-table01({tag:"div"})
+						thead
+							tr
+								th テキスト
+								th テキスト
+								th テキスト
+						tbody
+							tr
+								th テキスト
+								td!= DUMMY_TEXT_400
+								td
+									ol
+										li!= DUMMY_TEXT_50
+										li!= DUMMY_TEXT_50
+			//- パンくず ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"パンくず"})
+					+m-breadcrumb01([{text:"ホーム", url:"#"}, {text:"下層ページ", url:"#"}, {text:"下層ページ"}])
+			//- ラベル ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"ラベル"})
+					+m-textLabel01({tag:"p", text:"ラベル01", className:"is-red01"})
+			//- ボタン01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"ボタン01"})
+					+m-btn01({tag:"p",text:"ボタン01", url:"index.html", className:"is-icon"})
+			//- ボタン02 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"ボタン02"})
+					+m-btn02({tag:"p",text:"ボタン02", url:"index.html", className:"is-icon"})
+			//- ページャー01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"ページャー01"})
+					+m-pager01([{list:"1"},{list:"2",url:"#"}])
+			//- フォーム テキスト01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"フォーム テキスト01"})
+					+m-inputText01({tag:"p", name:"text01"})
+			//- フォーム チェックボタン01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"フォーム チェックボタン"})
+					+m-inputCheck01({tag:"p", name:"check01", text:["テキスト01","テキスト02","テキスト03","テキスト04"] })
+			//- フォーム ラジオボタン01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"フォーム ラジオボタン"})
+					+m-inputRadio01({tag:"p", name:"sex", text:[{id:"sex-m", text:"男"},{id:"sex-f", text:"女"}] })
+			//- フォーム ファイル01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"フォーム ファイル"})
+					+m-inputFileBox01({tag:"p", name:"file01"})
+			//- フォーム パスワード01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"フォーム パスワード"})
+					+m-inputPassword01({tag:"p", name:"password01"})
+			//- フォーム セレクト01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"フォーム セレクト"})
+					+m-inputSelect01({tag:"p", id:"address", name:"address"})
+						.
+							<optgroup label="北海道・東北地方">
+								<option  value="北海道"> 北海道</option>
+								<option  value="青森県"> 青森県</option>
+								<option  value="岩手県"> 岩手県</option>
+								<option  value="秋田県"> 秋田県</option>
+								<option  value="宮城県"> 宮城県</option>
+								<option  value="山形県"> 山形県</option>
+								<option  value="福島県"> 福島県</option>
+							</optgroup>
+							<optgroup label="関東地方">
+								<option  value="東京都"> 東京都</option>
+								<option  value="神奈川県"> 神奈川県</option>
+								<option  value="埼玉県"> 埼玉県</option>
+								<option  value="千葉県"> 千葉県</option>
+								<option  value="茨城県"> 茨城県</option>
+								<option  value="栃木県"> 栃木県</option>
+								<option  value="群馬県"> 群馬県</option>
+							</optgroup>
+							<optgroup label="甲信越地方">
+								<option  value="山梨県"> 山梨県</option>
+								<option  value="長野県"> 長野県</option>
+								<option  value="新潟県"> 新潟県</option>
+							</optgroup>
+							<optgroup label="東海地方">
+								<option  value="静岡県"> 静岡県</option>
+								<option  value="愛知県"> 愛知県</option>
+								<option  value="岐阜県"> 岐阜県</option>
+								<option  value="三重県"> 三重県</option>
+							</optgroup>
+							<optgroup label="北陸地方">
+								<option  value="富山県"> 富山県</option>
+								<option  value="石川県"> 石川県</option>
+								<option  value="福井県"> 福井県</option>
+							</optgroup>
+							<optgroup label="近畿地方">
+								<option  value="大阪府"> 大阪府</option>
+								<option  value="京都府"> 京都府</option>
+								<option  value="奈良県"> 奈良県</option>
+								<option  value="滋賀県"> 滋賀県</option>
+								<option  value="和歌山県"> 和歌山県</option>
+								<option  value="兵庫県"> 兵庫県</option>
+							</optgroup>
+							<optgroup label="中国地方">
+								<option  value="岡山県"> 岡山県</option>
+								<option  value="広島県"> 広島県</option>
+								<option  value="鳥取県"> 鳥取県</option>
+								<option  value="島根県"> 島根県</option>
+								<option  value="山口県"> 山口県</option>
+							</optgroup>
+							<optgroup label="四国地方">
+								<option  value="香川県"> 香川県</option>
+								<option  value="徳島県"> 徳島県</option>
+								<option  value="愛媛県"> 愛媛県</option>
+								<option  value="高知県"> 高知県</option>
+							</optgroup>
+							<optgroup label="九州・沖縄地方">
+								<option  value="福岡県"> 福岡県</option>
+								<option  value="佐賀県"> 佐賀県</option>
+								<option  value="長崎県"> 長崎県</option>
+								<option  value="大分県"> 大分県</option>
+								<option  value="熊本県"> 熊本県</option>
+								<option  value="宮崎県"> 宮崎県</option>
+								<option  value="鹿児島県"> 鹿児島県</option>
+								<option  value="沖縄県"> 沖縄県</option>
+							</optgroup>
+			//- フォーム テキストエリア01 ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"フォーム テキストエリア"})
+					+m-inputTextArea01({tag:"p", name:"textArea01"})
+			

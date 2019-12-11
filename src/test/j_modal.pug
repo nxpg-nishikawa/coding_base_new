@@ -1,0 +1,27 @@
+extends /_include/_template/_t_base_template
+
+block vars
+	-
+		var pageOption = {
+			KEY: "component",
+			URL: '',
+			RELATIVE_PATH: '../',
+			TITLE: '',
+			DESCRIPTION: '',
+			KEYWORDS: '',
+			side: [false,"left"],
+			HEADER: false,
+			FOOTER: false,
+			SIDE: false,
+			jquery: true
+		}
+
+block contents
+	+l-contentsWidth({tag:"div"})
+		+l-mqWrapper({tag:"div"})
+			p
+				a(href="" data-simplemodal-target="modaltest").c-simpleModal01Target modalテスト
+
+			.c-simpleModal01#modaltest
+				p モーダル
+				p.is-close 閉じる

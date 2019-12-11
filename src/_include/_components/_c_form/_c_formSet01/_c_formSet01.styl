@@ -5,7 +5,7 @@
 	tr
 		border-top 1px solid #eee
 
-		+MQ_SP(SP_RES_WID)
+		+MQ_SP(SP_RES_WID01)
 			display block
 			margin-top 15px
 			padding-top 15px
@@ -13,7 +13,7 @@
 		&:first-child
 			border-top none
 
-			+MQ_SP(SP_RES_WID)
+			+MQ_SP(SP_RES_WID01)
 				margin-top 0
 				padding-top 0
 
@@ -21,18 +21,19 @@
 		padding 15px
 		box-sizing border-box
 
-		+MQ_SP(SP_RES_WID)
+		+MQ_SP(SP_RES_WID01)
 			display block
 			padding 0
 	
 	th
 		width 150px
-		+MQ_SP(SP_RES_WID)
+		+MQ_SP(SP_RES_WID01)
 			width 100%
 			margin-bottom 10px
 
 		.inner
-			flexBox()
+			display flex
+			flex-wrap wrap
 			justify-content space-between
 
 	input[type="text"], select, textarea

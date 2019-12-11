@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html class="is-component" lang="ja">
+  <head>
+    <link rel="canonical" href="null">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=0.5 , maximum-scale=2">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta content="" property="og:title">
+    <meta content="" property="og:description">
+    <meta content="article" property="og:type">
+    <meta content="ja_JP" property="og:locale">
+    <link rel="stylesheet" href="..//css/style.css">
+    <link rel="shortcut icon" href="../images/common/favicon.ico">
+    <link rel="apple-touch-icon" href="../images/common/webclip.png">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="..//js/vendor.js"></script>
+    <script src="..//js/function.js"></script>
+  </head>
+  <body>
+    <main id="l-contentsTop">
+      <div class="l-contentsBody">
+        <div class="l-mainContents">
+          <div class="l-contentsWidth ">
+            <div class="l-mqWrapper ">
+              <div class="l-columnBlock ">
+                <p class="m-componentTitle01  com-title"><span>背景タイトル01</span></p>
+                <div class="l-columnBox">
+                  <div class="m-bgTitle01 is-center">
+                    <div class="group is-before">
+                      <p>beforeテキスト</p>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="titleBefore">
+                        <p class="m-textLabel01 is-red01"><span class="is-text">ラベル01</span></p>
+                      </div>
+                      <h3 class="com-title"><span class="is-large">大タイトル</span><span class="is-title">背景タイトル01（全要素表示）</span><span class="is-small">少タイトル</span>
+                      </h3>
+                      <div class="titleAfter">
+                        <p class="m-btn01 is-icon com-btn"><a href="index.html"><span class="btnWrapper"><span class="btnInner">ボタン01</span></span></a>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="group is-after">
+                      <p>afterテキスト</p>
+                    </div>
+                  </div>
+                  <div class="m-bgTitle01">
+                    <div class="group is-primary">
+                      <h3 class="com-title"><span class="is-title">背景タイトル01</span>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="l-columnBox">
+                  <div class="c-memoSet01">
+                    <div class="group is-before">
+                      <div class="block is-text">
+                        <div class="area is-text">
+                          <ul class="tab">
+                            <li class="is-current">使用モジュール</li>
+                            <li>ダウンロード</li>
+                            <li>使い方</li>
+                            <li>pug</li>
+                            <li>html</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary is-current">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <ul class="m-discList01">
+                            <li>m-bgTitle01</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <ul class="m-discList01">
+                            <li><a href="../file/_m_bgTitle01.zip">_m_bgTitle01.zip</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code is-text">
+                          <p>
+                            コンテンツの前に要素を入れる必要がある場合、<br>
+                            before:trueにして、 mixin beforeGroup()を宣言することで、
+                            要素の挿入ができる。<br>
+                            コンテンツの後ろ、タイトルの前後についても<br>
+                            以下のオプションをtrueにすることで、挿入可能。
+                          </p>
+                          <p>
+                            小タイトル、中タイトル、大タイトルについても必要であれば、<br>
+                            smallTitle, title, largeTitleを使用することで挿入可能。<br>
+                            (デフォルトで使用するのは title)
+                          </p>
+                          <pre><code class="stylus">+c-bgTitle01({
+	tag:          "div",                //親タグ名
+	baseName:     "c-bgTitle01",   //ベースclass名
+	title:        "",                   // タイトル
+	smallTitle:   "",                   // 中タイトル
+	largeTitle:   "",                   // 大タイトル
+	className:    "",                   //追加class名
+	before:       false,                //コンテンツの前に入る要素
+	after:        false,                //コンテンツの後ろに入る要素
+	titleBefore:  false,                //タイトルの前に入る要素
+	titleAfter:   false                 //タイトルの後ろに入る要素
+})</code></pre>
+                        </div>
+                        <div class="area is-code">
+                          <p>【シンプル】</p>
+                          <pre><code class="stylus">+m-bgTitle01({tag:"h3", title:"背景タイトル01"})</code></pre>
+                        </div>
+                        <div class="area is-code">
+                          <p>【全要素表示】</p>
+                          <pre><code class="stylus">+m-bgTitle01({tag:"h3", largeTitle:"大タイトル", title:"背景タイトル01（全要素表示）", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+	mixin beforeGroup()
+		// コンテンツの前に入る要素
+	mixin titleBefore()
+		// タイトルの前に入る要素
+	mixin titleAfter()
+		// タイトルの後に入る要素
+	mixin afterGroup()
+		// コンテンツの後に入る要素
+		p afterテキスト</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <pre><code class="stylus">.m-bgTitle01
+	.group.is-primary
+		h3.com-title
+			span.is-title tg.title</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <pre><code class="html">&lt;div class=&quot;m-bgTitle01&quot;&gt;
+	&lt;div class=&quot;group is-primary&quot;&gt;
+		&lt;h3 class=&quot;com-title&quot;&gt;&lt;span class=&quot;is-title&quot;&gt;背景タイトル01&lt;/span&gt;&lt;/h3&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="l-columnBlock ">
+                <div class="l-columnBox">
+                  <p class="m-componentTitle01  com-title"><span>ラージタイトル01</span></p>
+                  <div class="m-largeTitle01 is-center">
+                    <div class="group is-before">
+                      <p>beforeテキスト</p>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="titleBefore">
+                        <p class="m-textLabel01 is-red01"><span class="is-text">ラベル01</span></p>
+                      </div>
+                      <h3 class="com-title"><span class="is-large">大タイトル</span><span class="is-title">ラージタイトル01（全要素表示）</span><span class="is-small">少タイトル</span>
+                      </h3>
+                      <div class="titleAfter">
+                        <p class="m-btn01 is-icon com-btn"><a href="index.html"><span class="btnWrapper"><span class="btnInner">ボタン01</span></span></a>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="group is-after">
+                      <p>afterテキスト</p>
+                    </div>
+                  </div>
+                  <div class="m-largeTitle01">
+                    <div class="group is-primary">
+                      <h3 class="com-title"><span class="is-title">ラージタイトル01</span>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="l-columnBox">
+                  <div class="c-memoSet01">
+                    <div class="group is-before">
+                      <div class="block is-text">
+                        <div class="area is-text">
+                          <ul class="tab">
+                            <li class="is-current">使用モジュール</li>
+                            <li>ダウンロード</li>
+                            <li>使い方</li>
+                            <li>pug</li>
+                            <li>html</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary is-current">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <ul class="m-discList01">
+                            <li>m-largeTitle01</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <ul class="m-discList01">
+                            <li><a href="../file/_m_largeTitle01.zip">_m_largeTitle01.zip</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <p>背景タイトル01とほぼ同じ</p>
+                          <pre><code class="stylus">+c-largeTitle01({
+	tag:          "div",                //親タグ名
+	baseName:     "c-largeTitle01",   //ベースclass名
+	title:        "",                   // タイトル
+	smallTitle:   "",                   // 中タイトル
+	largeTitle:   "",                   // 大タイトル
+	className:    "",                   //追加class名
+	before:       false,                //コンテンツの前に入る要素
+	after:        false,                //コンテンツの後ろに入る要素
+	titleBefore:  false,                //タイトルの前に入る要素
+	titleAfter:   false                 //タイトルの後ろに入る要素
+})</code></pre>
+                        </div>
+                        <div class="area is-code">
+                          <p>【シンプル】</p>
+                          <pre><code class="stylus">+m-largeTitle01({tag:"h3", title:"タイトル"})</code></pre>
+                        </div>
+                        <div class="area is-code">
+                          <p>【全要素表示】</p>
+                          <pre><code class="stylus">+m-largeTitle01({tag:"h3", largeTitle:"大タイトル", title:"タイトル", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+	mixin beforeGroup()
+		// コンテンツの前に入る要素
+	mixin titleBefore()
+		// タイトルの前に入る要素
+	mixin titleAfter()
+		// タイトルの後に入る要素
+	mixin afterGroup()
+		// コンテンツの後に入る要素
+		p afterテキスト</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <pre><code class="stylus">.m-largeTitle01
+	.group.is-primary
+		h3.com-title
+			span.is-title tg.title</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <pre><code class="html">&lt;div class=&quot;m-largeTitle01&quot;&gt;
+	&lt;div class=&quot;group is-primary&quot;&gt;
+		&lt;h3 class=&quot;com-title&quot;&gt;&lt;span class=&quot;is-title&quot;&gt;背景タイトル01&lt;/span&gt;&lt;/h3&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="l-columnBlock ">
+                <div class="l-columnBox">
+                  <p class="m-componentTitle01  com-title"><span>下線タイトル01</span></p>
+                  <div class="m-borderBottomTitle01 is-center">
+                    <div class="group is-before">
+                      <p>beforeテキスト</p>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="titleBefore">
+                        <p class="m-textLabel01 is-red01"><span class="is-text">ラベル01</span></p>
+                      </div>
+                      <h3 class="com-title"><span class="is-large">大タイトル</span><span class="is-title">下線タイトル01（全要素表示）</span><span class="is-small">少タイトル</span>
+                      </h3>
+                      <div class="titleAfter">
+                        <p class="m-btn01 is-icon com-btn"><a href="index.html"><span class="btnWrapper"><span class="btnInner">ボタン01</span></span></a>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="group is-after">
+                      <p>afterテキスト</p>
+                    </div>
+                  </div>
+                  <div class="m-borderBottomTitle01">
+                    <div class="group is-primary">
+                      <h3 class="com-title"><span class="is-title">下線タイトル01</span>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="l-columnBox">
+                  <div class="c-memoSet01">
+                    <div class="group is-before">
+                      <div class="block is-text">
+                        <div class="area is-text">
+                          <ul class="tab">
+                            <li class="is-current">使用モジュール</li>
+                            <li>ダウンロード</li>
+                            <li>使い方</li>
+                            <li>pug</li>
+                            <li>html</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary is-current">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <ul class="m-discList01">
+                            <li>m-borderBottomTitle01</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <ul class="m-discList01">
+                            <li><a href="../file/_m_borderBottomTitle01.zip">_m_borderBottomTitle01.zip</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <p>背景タイトル01とほぼ同じ</p>
+                          <pre><code class="stylus">+c-borderBottomTitle01({
+	tag:          "div",                //親タグ名
+	baseName:     "c-borderBottomTitle01",   //ベースclass名
+	title:        "",                   // タイトル
+	smallTitle:   "",                   // 中タイトル
+	largeTitle:   "",                   // 大タイトル
+	className:    "",                   //追加class名
+	before:       false,                //コンテンツの前に入る要素
+	after:        false,                //コンテンツの後ろに入る要素
+	titleBefore:  false,                //タイトルの前に入る要素
+	titleAfter:   false                 //タイトルの後ろに入る要素
+})</code></pre>
+                        </div>
+                        <div class="area is-code">
+                          <p>【シンプル】</p>
+                          <pre><code class="stylus">+m-borderBottomTitle01({tag:"h3", title:"タイトル"})</code></pre>
+                        </div>
+                        <div class="area is-code">
+                          <p>【全要素表示】</p>
+                          <pre><code class="stylus">+m-borderBottomTitle01({tag:"h3", largeTitle:"大タイトル", title:"タイトル", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+	mixin beforeGroup()
+		// コンテンツの前に入る要素
+	mixin titleBefore()
+		// タイトルの前に入る要素
+	mixin titleAfter()
+		// タイトルの後に入る要素
+	mixin afterGroup()
+		// コンテンツの後に入る要素</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <pre><code class="stylus">.m-borderBottomTitle01
+	.group.is-primary
+		h3.com-title
+			span.is-title tg.title</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <pre><code class="html">&lt;div class=&quot;m-borderBottomTitle01&quot;&gt;
+	&lt;div class=&quot;group is-primary&quot;&gt;
+		&lt;h3 class=&quot;com-title&quot;&gt;&lt;span class=&quot;is-title&quot;&gt;背景タイトル01&lt;/span&gt;&lt;/h3&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="l-columnBlock ">
+                <div class="l-columnBox">
+                  <p class="m-componentTitle01  com-title"><span>左線タイトル01</span></p>
+                  <div class="m-borderLeftTitle01 is-center">
+                    <div class="group is-before">
+                      <p>beforeテキスト</p>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="titleBefore">
+                        <p class="m-textLabel01 is-red01"><span class="is-text">ラベル01</span></p>
+                      </div>
+                      <h3 class="com-title"><span class="is-large">大タイトル</span><span class="is-title">左線タイトル01（全要素表示）</span><span class="is-small">少タイトル</span>
+                      </h3>
+                      <div class="titleAfter">
+                        <p class="m-btn01 is-icon com-btn"><a href="index.html"><span class="btnWrapper"><span class="btnInner">ボタン01</span></span></a>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="group is-after">
+                      <p>afterテキスト</p>
+                    </div>
+                  </div>
+                  <div class="m-borderLeftTitle01">
+                    <div class="group is-primary">
+                      <h3 class="com-title"><span class="is-title">左線タイトル01</span>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="l-columnBox">
+                  <div class="c-memoSet01">
+                    <div class="group is-before">
+                      <div class="block is-text">
+                        <div class="area is-text">
+                          <ul class="tab">
+                            <li class="is-current">使用モジュール</li>
+                            <li>ダウンロード</li>
+                            <li>使い方</li>
+                            <li>pug</li>
+                            <li>html</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary is-current">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <ul class="m-discList01">
+                            <li>m-borderLeftTitle01</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <ul class="m-discList01">
+                            <li><a href="../file/_m_borderLeftTitle01.zip">_m_borderLeftTitle01.zip</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <p>背景タイトル01とほぼ同じ</p>
+                          <pre><code class="stylus">+c-borderLeftTitle01({
+	tag:          "div",                //親タグ名
+	baseName:     "c-borderLeftTitle01",   //ベースclass名
+	title:        "",                   // タイトル
+	smallTitle:   "",                   // 中タイトル
+	largeTitle:   "",                   // 大タイトル
+	className:    "",                   //追加class名
+	before:       false,                //コンテンツの前に入る要素
+	after:        false,                //コンテンツの後ろに入る要素
+	titleBefore:  false,                //タイトルの前に入る要素
+	titleAfter:   false                 //タイトルの後ろに入る要素
+})</code></pre>
+                        </div>
+                        <div class="area is-code">
+                          <p>【シンプル】</p>
+                          <pre><code class="stylus">+m-borderLeftTitle01({tag:"h3", title:"タイトル"})</code></pre>
+                        </div>
+                        <div class="area is-code">
+                          <p>【全要素表示】</p>
+                          <pre><code class="stylus">+m-borderLeftTitle01({tag:"h3", largeTitle:"大タイトル", title:"タイトル", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+	mixin beforeGroup()
+		// コンテンツの前に入る要素
+	mixin titleBefore()
+		// タイトルの前に入る要素
+	mixin titleAfter()
+		// タイトルの後に入る要素
+	mixin afterGroup()
+		// コンテンツの後に入る要素</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <pre><code class="stylus">.m-borderLeftTitle01
+	.group.is-primary
+		h3.com-title
+			span.is-title tg.title</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <pre><code class="html">&lt;div class=&quot;m-borderLeftTitle01&quot;&gt;
+	&lt;div class=&quot;group is-primary&quot;&gt;
+		&lt;h3 class=&quot;com-title&quot;&gt;&lt;span class=&quot;is-title&quot;&gt;背景タイトル01&lt;/span&gt;&lt;/h3&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="l-columnBlock ">
+                <div class="l-columnBox">
+                  <p class="m-componentTitle01  com-title"><span>右線タイトル01</span></p>
+                  <div class="m-borderRightTitle01">
+                    <div class="group is-before">
+                      <p>beforeテキスト</p>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="titleBefore">
+                        <p class="m-textLabel01 is-red01"><span class="is-text">ラベル01</span></p>
+                      </div>
+                      <h3 class="com-title"><span class="is-large">大タイトル</span><span class="is-title">右線タイトル01（全要素表示）</span><span class="is-small">少タイトル</span>
+                      </h3>
+                      <div class="titleAfter">
+                        <p class="m-btn01 is-icon com-btn"><a href="index.html"><span class="btnWrapper"><span class="btnInner">ボタン01</span></span></a>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="group is-after">
+                      <p>afterテキスト</p>
+                    </div>
+                  </div>
+                  <div class="m-borderRightTitle01">
+                    <div class="group is-primary">
+                      <h3 class="com-title"><span class="is-title">右線タイトル01</span>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="l-columnBox">
+                  <div class="c-memoSet01">
+                    <div class="group is-before">
+                      <div class="block is-text">
+                        <div class="area is-text">
+                          <ul class="tab">
+                            <li class="is-current">使用モジュール</li>
+                            <li>ダウンロード</li>
+                            <li>使い方</li>
+                            <li>pug</li>
+                            <li>html</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary is-current">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <ul class="m-discList01">
+                            <li>m-borderRightTitle01</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <ul class="m-discList01">
+                            <li><a href="../file/_m_borderRightTitle01.zip">_m_borderRightTitle01.zip</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <p>背景タイトル01とほぼ同じ</p>
+                          <pre><code class="stylus">+c-borderRightTitle01({
+	tag:          "div",                //親タグ名
+	baseName:     "c-borderRightTitle01",   //ベースclass名
+	title:        "",                   // タイトル
+	smallTitle:   "",                   // 中タイトル
+	largeTitle:   "",                   // 大タイトル
+	className:    "",                   //追加class名
+	before:       false,                //コンテンツの前に入る要素
+	after:        false,                //コンテンツの後ろに入る要素
+	titleBefore:  false,                //タイトルの前に入る要素
+	titleAfter:   false                 //タイトルの後ろに入る要素
+})</code></pre>
+                        </div>
+                        <div class="area is-code">
+                          <p>【シンプル】</p>
+                          <pre><code class="stylus">+m-borderRightTitle01({tag:"h3", title:"タイトル"})</code></pre>
+                        </div>
+                        <div class="area is-code">
+                          <p>【全要素表示】</p>
+                          <pre><code class="stylus">+m-borderRightTitle01({tag:"h3", largeTitle:"大タイトル", title:"タイトル", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+	mixin beforeGroup()
+		// コンテンツの前に入る要素
+	mixin titleBefore()
+		// タイトルの前に入る要素
+	mixin titleAfter()
+		// タイトルの後に入る要素
+	mixin afterGroup()
+		// コンテンツの後に入る要素</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <pre><code class="stylus">.m-borderRightTitle01
+	.group.is-primary
+		h3.com-title
+			span.is-title tg.title</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <pre><code class="html">&lt;div class=&quot;m-borderRightTitle01&quot;&gt;
+	&lt;div class=&quot;group is-primary&quot;&gt;
+		&lt;h3 class=&quot;com-title&quot;&gt;&lt;span class=&quot;is-title&quot;&gt;背景タイトル01&lt;/span&gt;&lt;/h3&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="l-columnBlock ">
+                <div class="l-columnBox">
+                  <p class="m-componentTitle01  com-title"><span>上線タイトル01</span></p>
+                  <div class="m-borderTopTitle01 is-center">
+                    <div class="group is-before">
+                      <p>beforeテキスト</p>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="titleBefore">
+                        <p class="m-textLabel01 is-red01"><span class="is-text">ラベル01</span></p>
+                      </div>
+                      <h3 class="com-title"><span class="is-large">大タイトル</span><span class="is-title">上線タイトル01（全要素表示）</span><span class="is-small">少タイトル</span>
+                      </h3>
+                      <div class="titleAfter">
+                        <p class="m-btn01 is-icon com-btn"><a href="index.html"><span class="btnWrapper"><span class="btnInner">ボタン01</span></span></a>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="group is-after">
+                      <p>afterテキスト</p>
+                    </div>
+                  </div>
+                  <div class="m-borderTopTitle01">
+                    <div class="group is-primary">
+                      <h3 class="com-title"><span class="is-title">上線タイトル01</span>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="l-columnBox">
+                  <div class="c-memoSet01">
+                    <div class="group is-before">
+                      <div class="block is-text">
+                        <div class="area is-text">
+                          <ul class="tab">
+                            <li class="is-current">使用モジュール</li>
+                            <li>ダウンロード</li>
+                            <li>使い方</li>
+                            <li>pug</li>
+                            <li>html</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary is-current">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <ul class="m-discList01">
+                            <li>m-borderTopTitle01</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <ul class="m-discList01">
+                            <li><a href="../file/_m_borderTopTitle01.zip">_m_borderTopTitle01.zip</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <p>背景タイトル01とほぼ同じ</p>
+                          <pre><code class="stylus">+c-borderTopTitle01({
+	tag:          "div",                //親タグ名
+	baseName:     "c-borderTopTitle01",   //ベースclass名
+	title:        "",                   // タイトル
+	smallTitle:   "",                   // 中タイトル
+	largeTitle:   "",                   // 大タイトル
+	className:    "",                   //追加class名
+	before:       false,                //コンテンツの前に入る要素
+	after:        false,                //コンテンツの後ろに入る要素
+	titleBefore:  false,                //タイトルの前に入る要素
+	titleAfter:   false                 //タイトルの後ろに入る要素
+})</code></pre>
+                        </div>
+                        <div class="area is-code">
+                          <p>【シンプル】</p>
+                          <pre><code class="stylus">+m-borderTopTitle01({tag:"h3", title:"タイトル"})</code></pre>
+                        </div>
+                        <div class="area is-code">
+                          <p>【全要素表示】</p>
+                          <pre><code class="stylus">+m-borderTopTitle01({tag:"h3", largeTitle:"大タイトル", title:"タイトル", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+	mixin beforeGroup()
+		// コンテンツの前に入る要素
+	mixin titleBefore()
+		// タイトルの前に入る要素
+	mixin titleAfter()
+		// タイトルの後に入る要素
+	mixin afterGroup()
+		// コンテンツの後に入る要素</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <pre><code class="stylus">.m-borderTopTitle01
+	.group.is-primary
+		h3.com-title
+			span.is-title tg.title</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <pre><code class="html">&lt;div class=&quot;m-borderTopTitle01&quot;&gt;
+	&lt;div class=&quot;group is-primary&quot;&gt;
+		&lt;h3 class=&quot;com-title&quot;&gt;&lt;span class=&quot;is-title&quot;&gt;背景タイトル01&lt;/span&gt;&lt;/h3&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="l-columnBlock ">
+                <div class="l-columnBox">
+                  <p class="m-componentTitle01  com-title"><span>上下線タイトル01</span></p>
+                  <div class="m-borderTopBottomTitle01 is-center">
+                    <div class="group is-before">
+                      <p>beforeテキスト</p>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="titleBefore">
+                        <p class="m-textLabel01 is-red01"><span class="is-text">ラベル01</span></p>
+                      </div>
+                      <h3 class="com-title"><span class="is-large">大タイトル</span><span class="is-title">上下線タイトル01（全要素表示）</span><span class="is-small">少タイトル</span>
+                      </h3>
+                      <div class="titleAfter">
+                        <p class="m-btn01 is-icon com-btn"><a href="index.html"><span class="btnWrapper"><span class="btnInner">ボタン01</span></span></a>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="group is-after">
+                      <p>afterテキスト</p>
+                    </div>
+                  </div>
+                  <div class="m-borderTopBottomTitle01">
+                    <div class="group is-primary">
+                      <h3 class="com-title"><span class="is-title">上下線タイトル01</span>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="l-columnBox">
+                  <div class="c-memoSet01">
+                    <div class="group is-before">
+                      <div class="block is-text">
+                        <div class="area is-text">
+                          <ul class="tab">
+                            <li class="is-current">使用モジュール</li>
+                            <li>ダウンロード</li>
+                            <li>使い方</li>
+                            <li>pug</li>
+                            <li>html</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary is-current">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <ul class="m-discList01">
+                            <li>m-borderTopBottomTitle01</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <ul class="m-discList01">
+                            <li><a href="../file/_m_borderTopBottomTitle01.zip">_m_borderTopBottomTitle01.zip</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <p>背景タイトル01とほぼ同じ</p>
+                          <pre><code class="stylus">+c-borderTopBottomTitle01({
+	tag:          "div",                //親タグ名
+	baseName:     "c-borderTopBottomTitle01",   //ベースclass名
+	title:        "",                   // タイトル
+	smallTitle:   "",                   // 中タイトル
+	largeTitle:   "",                   // 大タイトル
+	className:    "",                   //追加class名
+	before:       false,                //コンテンツの前に入る要素
+	after:        false,                //コンテンツの後ろに入る要素
+	titleBefore:  false,                //タイトルの前に入る要素
+	titleAfter:   false                 //タイトルの後ろに入る要素
+})</code></pre>
+                        </div>
+                        <div class="area is-code">
+                          <p>【シンプル】</p>
+                          <pre><code class="stylus">+m-borderTopBottomTitle01({tag:"h3", title:"タイトル"})</code></pre>
+                        </div>
+                        <div class="area is-code">
+                          <p>【全要素表示】</p>
+                          <pre><code class="stylus">+m-borderTopBottomTitle01({tag:"h3", largeTitle:"大タイトル", title:"タイトル", smallTitle:"少タイトル", className:"is-center",before:true, after:true, titleBefore:true, titleAfter:true})
+	mixin beforeGroup()
+		// コンテンツの前に入る要素
+	mixin titleBefore()
+		// タイトルの前に入る要素
+	mixin titleAfter()
+		// タイトルの後に入る要素
+	mixin afterGroup()
+		// コンテンツの後に入る要素</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <pre><code class="stylus">.m-borderTopBottomTitle01
+	.group.is-primary
+		h3.com-title
+			span.is-title tg.title</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="group is-primary">
+                      <div class="block is-text">
+                        <div class="area is-code">
+                          <pre><code class="html">&lt;div class=&quot;m-borderTopBottomTitle01&quot;&gt;
+	&lt;div class=&quot;group is-primary&quot;&gt;
+		&lt;h3 class=&quot;com-title&quot;&gt;&lt;span class=&quot;is-title&quot;&gt;背景タイトル01&lt;/span&gt;&lt;/h3&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

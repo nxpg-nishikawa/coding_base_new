@@ -24,7 +24,8 @@ l-colSet01(tg)
 	SP_MARGIN = 10px
 	PC_MARGIN = 20px
 	
-	flexBox()
+	display flex
+	flex-wrap wrap
 
 	&:first-child
 		margin-top 0
@@ -33,31 +34,31 @@ l-colSet01(tg)
 		justify-content center
 
 	&.is-two
-		+MQ_PC(SP_RES_WID)
+		+MQ_PC(SP_RES_WID01)
 			l-colSet01({col:2, margin:PC_MARGIN})
-		+MQ_SP(SP_RES_WID)
+		+MQ_SP(SP_RES_WID01)
 			l-colSet01({col:1, margin:SP_MARGIN})
 	
 	&.is-three
-		+MQ_PC(SP_RES_WID)
+		+MQ_PC(SP_RES_WID01)
 			l-colSet01({col:3, margin:PC_MARGIN})
-		+MQ_SP(SP_RES_WID)
+		+MQ_SP(SP_RES_WID01)
 			l-colSet01({col:1, margin:SP_MARGIN})
 
 	&.is-four
-		+MQ_PC(SP_RES_WID)
+		+MQ_PC(SP_RES_WID01)
 			l-colSet01({col:4, margin:PC_MARGIN})
-		+MQ_SP(SP_RES_WID)
+		+MQ_SP(SP_RES_WID01)
 			l-colSet01({col:2, margin:SP_MARGIN})
 
 	&.is-five
-		+MQ_PC(SP_RES_WID)
+		+MQ_PC(SP_RES_WID01)
 			l-colSet01({col:5, margin:PC_MARGIN})
-		+MQ_SP(SP_RES_WID)
+		+MQ_SP(SP_RES_WID01)
 			l-colSet01({col:2, margin:SP_MARGIN})
 
 	&.is-six
-		+MQ_PC(SP_RES_WID)
+		+MQ_PC(SP_RES_WID01)
 			l-colSet01({col:6, margin:PC_MARGIN})
-		+MQ_SP(SP_RES_WID)
+		+MQ_SP(SP_RES_WID01)
 			l-colSet01({col:2, margin:SP_MARGIN})

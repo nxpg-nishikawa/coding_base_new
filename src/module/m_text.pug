@@ -1,0 +1,362 @@
+extends /_include/_template/_t_base_template
+
+block vars
+	-
+		var pageOption = {
+			KEY: "component",
+			URL: '',
+			RELATIVE_PATH: '../',
+			TITLE: '',
+			DESCRIPTION: '',
+			KEYWORDS: '',
+			HEADER: false,
+			FOOTER: false,
+			SIDE: false,
+			jquery: true
+		}
+
+block contents
+	+l-contentsWidth({tag:"div"})
+		+l-mqWrapper({tag:"div"})
+			//- デフォルトテキストセット(WYSIWYG) ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"デフォルトテキストセット(WYSIWYG)"})
+					+m-defaultTag({tag:"div"})
+						p!= DUMMY_TEXT_400
+
+						ul
+							li!= DUMMY_TEXT_50
+								ul
+									li!= DUMMY_TEXT_20
+										ul
+											li!= DUMMY_TEXT_20
+						
+						ol
+							li!= DUMMY_TEXT_50
+								ol
+									li!= DUMMY_TEXT_50
+										ol
+											li!= DUMMY_TEXT_50
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li ダウンロード
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-defaultTag
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li
+											a(href=pageOption.RELATIVE_PATH + "file/_m_defaultTag.zip") _m_defaultTag.zip
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+												
+			//- ディスクリスト ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"ディスクリスト"})
+					+m-discList01
+						li ディスクリスト
+							ul
+								li ディスクリスト
+									ul
+										li ディスクリスト
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li ダウンロード
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-discList01
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li
+											a(href=pageOption.RELATIVE_PATH + "file/_m_discList01.zip") _m_discList01.zip
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+			//- 数字リスト ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"数字リスト"})
+					+m-decimalList01
+						li 数字リスト
+							ul
+								li 数字リスト
+									ul
+										li 数字リスト
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li ダウンロード
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-decimalList01
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li
+											a(href=pageOption.RELATIVE_PATH + "file/_m_decimalList01.zip") _m_decimalList01.zip
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+			//- テキストリンク ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"テキストリンク"})
+					p
+						+m-linkModule01({url:"index.html"})
+							| テキストリンク
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li ダウンロード
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-linkModule01
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li
+											a(href=pageOption.RELATIVE_PATH + "file/_m_linkModule01.zip") _m_linkModule01.zip
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+			//- テーブル ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"テーブル"})
+					+m-table01({tag:"div"})
+						thead
+							tr
+								th テキスト
+								th テキスト
+								th テキスト
+						tbody
+							tr
+								th テキスト
+								td!= DUMMY_TEXT_400
+								td
+									ol
+										li!= DUMMY_TEXT_50
+										li!= DUMMY_TEXT_50
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li ダウンロード
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-table01
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li
+											a(href=pageOption.RELATIVE_PATH + "file/_m_table01.zip") _m_table01.zip
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+			//- パンくず ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"パンくず"})
+					+m-breadcrumb01([{text:"ホーム", url:"#"}, {text:"下層ページ", url:"#"}, {text:"下層ページ"}])
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li ダウンロード
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-breadcrumb01
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li
+											a(href=pageOption.RELATIVE_PATH + "file/_m_breadcrumb01.zip") _m_breadcrumb01.zip
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html
+			//- ラベル ----------------------------------------------------------------------------------------------------------------------
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p", text:"ラベル"})
+					+m-textLabel01({tag:"p", text:"ラベル01", className:"is-red01"})
+				+l-columnBox({tag:"div"})
+					.c-memoSet01
+						.group.is-before
+							.block.is-text
+								.area.is-text
+									ul.tab
+										li.is-current 使用モジュール
+										li ダウンロード
+										li 使い方
+										li pug
+										li html
+						.group.is-primary.is-current
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li m-defaultTag
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									ul.m-discList01
+										li
+											a(href=pageOption.RELATIVE_PATH + "file/_m_defaultTag.zip") _m_defaultTag.zip
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.stylus
+						.group.is-primary
+							.block.is-text
+								.area.is-code
+									pre
+										code.html
+											:escape-html

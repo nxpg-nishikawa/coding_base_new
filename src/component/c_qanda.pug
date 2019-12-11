@@ -1,0 +1,33 @@
+extends /_include/_template/_t_base_template
+
+block vars
+	-
+		var pageOption = {
+			KEY: "component",
+			URL: '',
+			RELATIVE_PATH: '../',
+			TITLE: '',
+			DESCRIPTION: '',
+			KEYWORDS: '',
+			side: [false,"left"],
+			HEADER: false,
+			FOOTER: false,
+			SIDE: false,
+			jquery: true
+		}
+block contents
+	+l-contentsWidth({tag:"div"})
+		+l-mqWrapper({tag:"div"})
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"Q&A"})
+					+c-qandaSet01({tag:"div"})
+						+c-qandaList01({tag:"div", question:"タイトルが入ります", answer:DUMMY_TEXT_400})
+						+c-qandaList01({tag:"div", question:"タイトルが入ります", answer:"テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります"})
+						+c-qandaList01({tag:"div", question:"タイトルが入ります", answer:"テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります"})
+						+c-qandaList01({tag:"div", question:"タイトルが入ります", answer:"テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります"})
+						+c-qandaList01({tag:"div"})
+							mixin questionArea()
+								p.title タイトルが入ります
+							mixin answerArea()
+								p!= DUMMY_TEXT_400

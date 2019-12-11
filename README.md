@@ -6,82 +6,29 @@
         npm install
         gulp
     
-    ■gitプルしたとき
+    ■gitプルしたときなど、書き出し直したい時は
         gulp build
 
 
 # git
     ■除外ファイルはプッシュしない(gitignoreで設定)
-        node_module/
-        dist/
+        node_module/ ←ファイル数いっぱいあるのでプッシュしたら大変なことになる！
+        dist/ ←案件によっては、コメントアウトしよう
 
 
 # ファイル構成
-    pugとstylusは同じ関係になるようにディレクトリ・ファイルを作成する。
-    ■ pug
-        |-- ● include           // (↓範囲大きい順)
-            |-- □ settings       // head、meta、グローバル変数、mixinなど 初期設定群
-            |-- □ layout         // レイアウト（wrapperやcontents幅など）外側のパーツ
-            |-- □ components     // コンポーネント・共通パーツ（ヘッダー、フッター）などのパーツ
-            |-- □ modules        // モジュール(ボタン、タイトルなど)内側のパーツ
-            |-- □ template       // テンプレート（setting + layout）、基本表示のかたまり
-            |-- □ pages          // ページ固有のコンポーネント群
-                |-- ○ _p_home     // トップページ用 コンポーネント群 
-        |-- about.pug          // html用 pug
-        |-- index.pug          // html用 pug
+    モジュール、コンポーネントなどは、pug、stylus、jsに限らず、_include 以下に入れる。
 
-    ■ stylus
-        |-- ● include           // (↓範囲大きい順)
-            |-- □ settings       // グローバル変数、reset、mixinなど 初期設定群（順番注意）
-            |-- □ layout         // レイアウト（wrapperやcontents幅など）外側のパーツ
-            |-- □ components     // コンポーネント・共通パーツ（ヘッダー、フッター）などのパーツ
-            |-- □ modules        // モジュール(ボタン、タイトルなど)内側のパーツ
-            |-- □ pages          // ページ固有のcss
-                |-- ○ _p_home     // トップページ用css
-        |-- stylus.styl        // style.css
-
-     ■ scss
-        |-- ● include           // (↓範囲大きい順)
-            |-- □ settings       // グローバル変数、reset、mixinなど 初期設定群（順番注意）
-                |-- _s_base.scss
-                |-- 
-                |-- 
-            |-- □ layout         // レイアウト（wrapperやcontents幅など）外側のパーツ
-                |-- ○ _l_layoutSet.scss
-                |-- 
-                |-- 
-            |-- □ components     // コンポーネント・共通パーツ（ヘッダー、フッター）などのパーツ
-                |-- ○ _c_common_header01.pug
-                |-- 
-                |-- 
-            |-- □ modules        // モジュール(ボタン、タイトルなど)内側のパーツ
-                |-- _m_btnSet.scss
-                |-- 
-                |-- 
-            |-- □ pages          // ページ固有のcss
-                |-- ○ _p_home     // トップページ用css
-                    |-- _p_homeMainvisual.scss
-                    |-- 
-                |-- ○ _p_home.scss
-                |-- 
-                |-- 
-        |-- stylus.styl        // style.css
-
-    ■ js
-        |-- ● include
-            |-- □ _modules
-            |-- □ _pages
-                |--○ _p_common   //　共通.js
-                |--○ _p_home     //　トップページ用.js
-        |-- entry.js           //　読み込み用
-
-    ■ images
-        |-- common
-        |-- ● contents
-            |-- □ home
-                |--○ home_image01.png
-            |-- □ about
-            |-- □ news
+    ● _include
+        |-- □ components     // コンポーネント・共通パーツ（ヘッダー、フッター）などのパーツ
+        |-- □ layout         // レイアウト（wrapperやcontents幅など）外側のパーツ
+        |-- □ modules        // モジュール(ボタン、タイトルなど)内側のパーツ
+        |-- □ pages          // ページ固有のコンポーネント群
+            |-- ○ _p_home    // トップページ用 コンポーネント群
+        |-- □ settings       // head、meta、グローバル変数、mixinなど 初期設定群
+            |-- ○ _pug       // pug用設定ファイル
+            |-- ○ _stylus    // stylus用設定ファイル
+        |-- □ template       // テンプレートファイル
 
 
 # class命名規則
@@ -163,6 +110,14 @@
     ・共通で使うパーツは適宜、コンポーネント化、モジュール化する
     ・コンポーネント化の際は、名前の付け方、ディレクトリの場所に注意
 
+## コンポーネントの基本構造
+	.primaryGroup 一次要素
+		.sampleBlock
+			.sampleArea
+				.box
+					.item
+						p
+						ul
 
 # stylusについて
 
@@ -184,7 +139,7 @@
     ・ブレイクポイントの記述は離しすぎない（どこに行ったかわからなくなるので）
 
 ## cssサンプル
-    ■影響範囲の広さ、外側から内側へむかって書く
+    ■影響範囲の広さ、外側から内側へむかって書く:（コロン）;（セミコロン）は省略する
 
         content ""
         cursor pointer

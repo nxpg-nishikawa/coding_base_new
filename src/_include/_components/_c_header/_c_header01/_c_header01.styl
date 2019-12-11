@@ -2,21 +2,22 @@
 header.c-header01
 	position relative
 	padding-top 10px
-	+MQ_SP(SP_RES_WID)
+	+MQ_SP(SP_RES_WID01)
 		padding 15px 15px 0
 
 	.contentsArea
-		+MQ_PC(SP_RES_WID)
-			flexBox()
+		+MQ_PC(SP_RES_WID01)
+			display flex
+			flex-wrap wrap
 			justify-content space-between
 			align-items center
 
 	.logoBlock
-		+MQ_SP(SP_RES_WID)
+		+MQ_SP(SP_RES_WID01)
 			padding-bottom 15px
 
 	.navBlock
-		+MQ_SP(SP_RES_WID)
+		+MQ_SP(SP_RES_WID01)
 			display none
 			flex-direction column
 			position absolute
@@ -25,21 +26,23 @@ header.c-header01
 			background-color #FFF
 
 	.subNavArea
-		+MQ_PC(SP_RES_WID)
-			flexBox()
+		+MQ_PC(SP_RES_WID01)
+			display flex
+			flex-wrap wrap
 			justify-content flex-end
 			align-items center
 			margin-bottom 1.5em
 		
-		+MQ_SP(SP_RES_WID)
+		+MQ_SP(SP_RES_WID01)
 			order 1
 			padding 15px
 
 		.subNav
-			+MQ_PC(SP_RES_WID)
+			+MQ_PC(SP_RES_WID01)
 				margin-left 1.5em
 				ul
-					flexBox()
+					display flex
+					flex-wrap wrap
 					justify-content flex-end
 
 				li
@@ -54,23 +57,25 @@ header.c-header01
 					text-decoration none
 					line-height 1.0
 
-			+MQ_SP(SP_RES_WID)
+			+MQ_SP(SP_RES_WID01)
 				ul
-					flexBox()
+					display flex
+					flex-wrap wrap
 				li
 					margin-right 10px
 
 		.m-inputText01
-			+MQ_SP(SP_RES_WID)
+			+MQ_SP(SP_RES_WID01)
 				margin-bottom 10px
 
 	.globalNavArea
-		+MQ_SP(SP_RES_WID)
+		+MQ_SP(SP_RES_WID01)
 			order 0
 		.globalNav
-			+MQ_PC(SP_RES_WID)
+			+MQ_PC(SP_RES_WID01)
 				& > ul
-					flexBox()
+					display flex
+					flex-wrap wrap
 					justify-content flex-end
 					& > li
 						margin-left 1.5em
@@ -87,14 +92,14 @@ header.c-header01
 						& > a
 							padding 0.5em 0
 							
-			+MQ_SP(SP_RES_WID)
+			+MQ_SP(SP_RES_WID01)
 				& > ul
 					& > li
 						& > a
 							padding 15px
 							background-color #dfdfdf
 		.childNav
-			+MQ_PC(SP_RES_WID)
+			+MQ_PC(SP_RES_WID01)
 				display none
 				position absolute
 				left 0
@@ -107,7 +112,7 @@ header.c-header01
 				a
 					padding 1.5em 0.5em
 
-			+MQ_SP(SP_RES_WID)
+			+MQ_SP(SP_RES_WID01)
 				padding 15px
 				background-color #cfcfcf
 				

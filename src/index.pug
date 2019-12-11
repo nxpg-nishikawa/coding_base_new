@@ -1,38 +1,340 @@
 extends /_include/_template/_t_base_template
 
 block vars
-	- var KEY = "home"
-	- var URL = 'index.html'
-	- var RELATIVE_PATH = ''
-	- var TITLE = 'ページリスト'
-	- var DESCRIPTION = ''
-	- var KEYWORDS = ''
-	- var header = "false"
-	- var footer = "false"
-	- var side = ["false","left"]
-	- var jquery = "true"
+	-
+		var pageOption = {
+			KEY: "component",
+			URL: '',
+			RELATIVE_PATH: '',
+			TITLE: '',
+			DESCRIPTION: '',
+			KEYWORDS: '',
+			side: [false,"left"],
+			HEADER: false,
+			FOOTER: false,
+			SIDE: false,
+			jquery: true
+		}
 
 block contents
 	+l-contentsWidth({tag:"div"})
 		+l-mqWrapper({tag:"div"})
-			+m-discList01
-				+m-list01({url:"m_module.html", text:"モジュール"})
-				+m-list01({url:"c_btn.html", text:"コンポーネント_ボタン"})
-				+m-list01({url:"c_qanda.html", text:"コンポーネント_Q&A"})
-				+m-list01({url:"c_header.html", text:"コンポーネント_ヘッダー"})
-				+m-list01({url:"c_footer.html", text:"コンポーネント_フッター"})
-				+m-list01({url:"c_mainvisual.html", text:"コンポーネント_メインビジュアル"})
-				+m-list01({url:"c_news.html", text:"コンポーネント_ニュース"})
-				+m-list01({url:"c_form.html", text:"コンポーネント_フォーム"})
-				+m-list01({url:"c_column.html", text:"コンポーネント_カラム"})
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-borderRightTitle01({tag:"h3", title:"ページリスト"})
+					+m-componentTitle01({tag:"p",text:"モジュール"})
+					+m-discList01
+						+m-list01({url:"module/m_layout.html", text:"モジュール_レイアウト"})
+						+m-list01({url:"module/m_title.html", text:"モジュール_タイトル"})
+						+m-list01({url:"module/m_text.html", text:"モジュール_テキスト"})
+						+m-list01({url:"module/m_image.html", text:"モジュール_画像"})
+						+m-list01({url:"module/m_btn.html", text:"モジュール_ボタン"})
+						+m-list01({url:"module/m_form.html", text:"モジュール_フォーム"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"コンポーネント"})
+					+m-discList01
+						+m-list01({url:"component/c_btn.html", text:"コンポーネント_ボタン"})
+						+m-list01({url:"component/c_qanda.html", text:"コンポーネント_Q&A"})
+						+m-list01({url:"component/c_header.html", text:"コンポーネント_ヘッダー"})
+						+m-list01({url:"component/c_footer.html", text:"コンポーネント_フッター"})
+						+m-list01({url:"component/c_mainvisual.html", text:"コンポーネント_メインビジュアル"})
+						+m-list01({url:"component/c_news.html", text:"コンポーネント_ニュース"})
+						+m-list01({url:"component/c_form.html", text:"コンポーネント_フォーム"})
+						+m-list01({url:"component/c_column.html", text:"コンポーネント_カラム"})
+				+l-columnBox({tag:"div"})
+					+m-componentTitle01({tag:"p",text:"テスト"})
+					+m-discList01
+						+m-list01({url:"test/canvas.html", text:"テスト_キャンバス"})
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+m-borderRightTitle01({tag:"h3", title:"ダウンロード"})
+					+m-discList01
+						+m-list01({url:"file/base_src.zip", text:"初期セット（20191210）"})
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+l-columnBox({tag:"div"})
+						+m-borderRightTitle01({tag:"h3", title:"インストール"})
+						+m-defaultTag({tag:"div"})
+							p
+								| <b>■初期設定のとき</b><br>
+								| npm install<br>
+								| gulp<br>
+							p
+								| <b>■gitプルしたときなど、書き出し直したい時は</b><br>
+								| gulp build
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+l-columnBox({tag:"div"})
+						+m-borderRightTitle01({tag:"h3", title:"git"})
+						+m-defaultTag({tag:"div"})
+							p
+								| <b>■除外ファイルはプッシュしない(gitignoreで設定)</b><br>
+								| node_module/ ←ファイル数いっぱいあるのでプッシュしたら大変なことになる！<br>
+								| dist/ ←案件によっては、コメントアウトしよう
+
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+l-columnBox({tag:"div"})
+						+m-borderRightTitle01({tag:"h3", title:"ファイル構成"})
+						+m-defaultTag({tag:"div"})
+							p モジュール、コンポーネントなどは、pug、stylus、jsに限らず、_include 以下に入れる。
+							pre
+								code.stylus.
+									● _include
+									|-- □ components     // コンポーネント・共通パーツ（ヘッダー、フッター）などのパーツ
+									|-- □ layout         // レイアウト（wrapperやcontents幅など）外側のパーツ
+									|-- □ modules        // モジュール(ボタン、タイトルなど)内側のパーツ
+									|-- □ pages          // ページ固有のコンポーネント群
+										|-- ○ _p_home    // トップページ用 コンポーネント群
+									|-- □ settings       // head、meta、グローバル変数、mixinなど 初期設定群
+										|-- ○ _pug       // pug用設定ファイル
+										|-- ○ _stylus    // stylus用設定ファイル
+									|-- □ template       // テンプレートファイル
+
+
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+l-columnBox({tag:"div"})
+						+m-borderRightTitle01({tag:"h3", title:"class命名規則"})
+						+m-defaultTag({tag:"div"})
+							p
+								b ■ コンポーネント、モジュールの名前の付け方
+								br
+								| 接頭詞-種類-名前 = c-component-iconTitleContents
+
+							p
+								b ■ よくつかうレイアウトclass名
+							+m-table01({tag:"div"})
+								tbody
+									tr
+										td .group
+									tr
+										td .block
+									tr
+										td .area
+									tr
+										td .box
+							p
+								b ■ module以下での汎用class名
+							+m-table01({tag:"div"})
+								tbody
+									tr
+										td .btn
+									tr
+										td .bg
+									tr
+										td .icon
+									tr
+										td .image
+									tr
+										td .list
+									tr
+										td .subTitle
+									tr
+										td .text
+									tr
+										td .title
+
+							//- ■ ステート切り替えclass
+							//- 	is-名前 = is-red、is-left、is-animateなど
+							//- 	.is-left, .is-right
+							//- 	.is-pc, .is-sp
+							//- 	.is-imageLeft, .is-imageRight
+							//- 	.is-active, .is-current
+							//- 	.is-white, .is-red
+							
+							//- ■ 参考
+							//- 	.l-contentsWrapper                                  <= 接頭詞+レイアウト名
+							//- 		.c-imageSet01.is-three                            <= 接頭詞+コンポーネント名.ステート名
+							//- 			ul
+							//- 				li
+							//- 					.box
+							//- 						.p-imageSet                     <= 接頭詞+パーツ名
+							//- 							p.image                     <= 汎用class名
+							//- 								img(src="" alt="")
+							//- 						.textArea
+							//- 							h3.title タイトル            <= 汎用class名
+							//- 							p.text テキスト              <= 汎用class名
+							//- 							.m-btnSet.is-white          <= 接頭詞+パーツ名.ステート名
+							//- 								a(href="")
+							//- 									span ボタン
 
 
 
-//- メモ コンポーネントの基本構造
-	.primaryGroup 一次要素
-		.sampleBlock
-			.sampleArea
-				.box
-					.item
-						p
-						ul
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+l-columnBox({tag:"div"})
+						+m-borderRightTitle01({tag:"h3", title:"images"})
+						+m-defaultTag({tag:"div"})
+							.
+								■ディレクトリについて
+									・共通画像はcommonへ
+									・ページごとの画像はcontents以下へ
+								■ 画像命名規則
+									ページ_名前_パーツ番号 = home_mainvisual_image01.png
+									common_header_arrow01.png、common_btn_arrow01.png
+
+
+
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+l-columnBox({tag:"div"})
+						+m-borderRightTitle01({tag:"h3", title:"pug"})
+						+m-defaultTag({tag:"div"})
+							.
+								## 基本
+									・= の後ろにはスペースを入れる
+									・各ページの頭にある変数で、ヘッダー、フッター、サイドメニューの表示非表示できる
+									・階層は「RELATIVE_PATH」を利用する
+										a(href= RELATIVE_PATH + "index.html")
+											img(src= RELATIVE_PATH + "images/contents/home/image01.png" alt="")
+									・インデントはタブで（distに書き出したらスペースになるので、みやすさ重視）
+
+
+								## 新規ページ追加
+									・ページの「KEY」変数を変更するとbodyのclassを変更することができる
+									・変更した場合、_s_meta.pugに配列を追加しないとエラーが出るので注意
+									・「～のコピー」などのファイルができると、distに書き出されるので注意
+
+
+								## コンポーネント化、モジュール化
+									・共通で使うパーツは適宜、コンポーネント化、モジュール化する
+									・コンポーネント化の際は、名前の付け方、ディレクトリの場所に注意
+
+								## コンポーネントの基本構造
+									.primaryGroup 一次要素
+										.sampleBlock
+											.sampleArea
+												.box
+													.item
+														p
+														ul
+
+
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+l-columnBox({tag:"div"})
+						+m-borderRightTitle01({tag:"h3", title:"stylus"})
+						+m-defaultTag({tag:"div"})
+							.
+								## 基本
+									・ネストを深くしない。3階層以下がベスト
+									・広い範囲で、titleやtextなどのclassにスタイルを当てない（他のページに影響するので）
+									・スタイルを当てるときは、親子関係を意識する
+									・importantは極力使わない
+									・プロパティ、疑似要素、ブレイクポイントの前などは改行を入れるなどして、
+									　あとで見たときわかりやすくしておく
+									・「：」と「；」は省略
+									・インデントはタブで（distに書き出したらスペースになるので、みやすさ重視）
+
+								## コンポーネント化、モジュール化
+									・モジュールにあまり細かい指定をしない
+									（フォントサイズやマージンなどはコンポーネントで指定する）
+
+								## レスポンシブ、ブレイクポイント
+									・ブレイクポイントの記述は離しすぎない（どこに行ったかわからなくなるので）
+
+								## cssサンプル
+									■影響範囲の広さ、外側から内側へむかって書く:（コロン）;（セミコロン）は省略する
+
+										content ""
+										cursor pointer
+										overflow hidden
+
+										・ディスプレイ
+										display flex
+										order 1
+										flex-wrap wrap
+										justify-contents space-between
+										align-items center
+
+										list-style-type decimal
+										table-layout fixed
+										border-collapse collapse
+
+										・float
+										clear both
+										float left
+
+										・ポジション
+										position absolute
+										top 0
+										right 0
+										bottom 0
+										left 0
+										z-index 10
+
+										・サイズ
+										max-width 100px
+										min-width 100px
+										width 100px
+										max-height 100px
+										min-height 100px
+										height 100px
+
+										・間隔
+										margin 10px 20px
+										padding 10px 20px
+
+										・色
+										color #fff
+										background-color #fff
+										background-image url("")
+										background-repeat no-repeat
+										background-position left top
+										background-size cover
+										border 1px solid #fff
+										border-radius 10px
+
+										・文字
+										font-family ""
+										font-size 10px
+										text-align center
+										line-height 1.0
+										vertical-align middle
+										text-decoration: underline;
+
+										・トランスフォーム
+										transform-origine center
+										transform translate3d(-50%, -50%, 0) rotate(180deg)
+
+										・アニメーション
+										animation-name fadeIn
+										animation-duration 3s
+										animation-timing-function linear
+										transition all 0.3s ease
+
+
+
+			+l-columnBlock({tag:"div"})
+				+l-columnBox({tag:"div"})
+					+l-columnBox({tag:"div"})
+						+m-borderRightTitle01({tag:"h3", title:"stylus"})
+						+m-defaultTag({tag:"div"})
+							.
+								■文字コード
+									原則、UTF-8 とする
+									※システム要件/言語/サーバの仕様で Shift-JIS や EUC-JP などが必要な場合は適宜変更する。
+								■DOCTYPE
+									原則、HTML5 とする。仕様に応じて適宜変更する。
+								■マークアップ
+									文法に則った HTML を記述する。 
+								■書式ルール
+									インデントは、半角スペース 2つもしくは、タブを使用する。
+									混在しないように気をつける。
+								■改行
+									適切なブロックごとに改行する。
+									pugで出力されたもので制御できない場合もある。
+
+
+
+
+
+
+
+
+
+
+
+
+

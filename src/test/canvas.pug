@@ -1,0 +1,35 @@
+extends /_include/_template/_t_base_template
+
+block vars
+	-
+		var pageOption = {
+			KEY: "canvas",
+			URL: '',
+			RELATIVE_PATH: '../',
+			TITLE: '',
+			DESCRIPTION: '',
+			KEYWORDS: '',
+			side: [false,"left"],
+			HEADER: false,
+			FOOTER: false,
+			SIDE: false,
+			jquery: true
+		}
+
+block library
+	script(src= "https://code.createjs.com/1.0.0/createjs.min.js")
+
+block contents
+	canvas#js-canvasLoadingAnimation
+	canvas#js-logoTarget
+	ul.loadBtn
+		li#type01_start 01_start
+		li#type01_end 01_end
+		li#type02_start 02_start
+		li#type02_end 02_end
+		li#type03_start 03_start
+		li#type03_end 03_end
+		li#type04_start 04_start
+		li#type04_end 04_end
+		li#type05_start 05_start
+		li#type05_end 05_end

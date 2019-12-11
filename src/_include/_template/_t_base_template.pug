@@ -4,25 +4,21 @@ include /_include/_settings/_pug/_s_mixin
 
 block vars
 
-html(lang="ja" class= "is-" + KEY)
+html(lang="ja" class= "is-" + pageOption.KEY)
 	head
-		include ../_settings/_pug/_s_head
+		include /_include/_settings/_pug/_s_head
 		block library
 	body
-
 		main#l-contentsTop
-			//- if(header == "true")
-			//- 	include ../_components/_c_comHeader01
-
-			if(side[0] == "true")
-				.l-sideWrapper(class= (side[1] == "left" ? "is-left" : "is-right" ) )
-					.l-contentsBody
-						block contents
+			if pageOption.HEADER
+				.l-contentsHeader
+					block header
+			.l-contentsBody(class = (pageOption.SIDE?'has-side':""))
+				if pageOption.SIDE
 					aside.l-sideContents
 						block side
-			else
-				.l-contentsBody
+				.l-mainContents
 					block contents
-
-			//- if(footer == "true")
-			//- 	include ../_components/_c_comFooter01
+			if pageOption.FOOTER
+				.l-contentsFooter
+					block footer

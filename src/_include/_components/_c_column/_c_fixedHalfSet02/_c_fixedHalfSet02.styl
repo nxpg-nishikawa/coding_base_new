@@ -3,14 +3,14 @@
 	PADDING = 20px
 
 	&.is-contentsLeft
-		+MQ_PC(SP_RES_WID)
+		+MQ_PC(SP_RES_WID01)
 			.block
 				&.is-fixed
 					float right
 					padding-left PADDING
 
 	&.is-contentsRight
-		+MQ_PC(SP_RES_WID)
+		+MQ_PC(SP_RES_WID01)
 			.block
 				&.is-fixed
 					float left
@@ -20,7 +20,7 @@
 		&.is-before
 			margin-bottom 30px
 		&.is-primary
-			+MQ_PC(SP_RES_WID)
+			+MQ_PC(SP_RES_WID01)
 				CF()
 		&.is-after
 			margin-top 30px
@@ -28,7 +28,7 @@
 			
 		.block
 			&.is-fixed
-				+MQ_SP(SP_RES_WID)
+				+MQ_SP(SP_RES_WID01)
 					width 100%
 					margin-bottom 10px
 					padding 0
@@ -44,7 +44,7 @@
 				m-defaultTag()
 			&.is-btn
 				min-width 300px
-				+MQ_SP(SP_RES_WID)
+				+MQ_SP(SP_RES_WID01)
 					min-width 0
 				.com-btn
 					margin-bottom 10px
@@ -57,5 +57,5 @@
 			
 			.com-image
 				img
-					+MQ_SP(SP_RES_WID)
+					+MQ_SP(SP_RES_WID01)
 						width 100%

@@ -8,8 +8,6 @@ html
 body
 	-webkit-text-size-adjust: 100%;
 	
-	// min-width: PC_CT_WID;
-	// min-width: PC_RES_WID;
 	min-height: 100%;
 	height: 100%;
 
@@ -43,7 +41,7 @@ body
 		background-color POINT_COLOR01
 		color #ffffff
 	
-	+MQ_SP(SP_RES_WID)
+	+MQ_SP(SP_RES_WID01)
 		min-width: 320px;
 		width: 100%;
 
@@ -53,7 +51,7 @@ a
 		text-decoration: underline;
 	&:active
 		text-decoration: none
-	+HOVER(SP_RES_WID)
+	+HOVER(SP_RES_WID01)
 		text-decoration: none
 	&:focus
 		outline none
